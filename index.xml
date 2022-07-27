@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QSL</title>
+    <link>https://example.com/</link>
+    <description>Recent content on QSL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it-IT</language>
+    <lastBuildDate>Mon, 25 Jul 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giocare con il terminale</title>
+      <link>https://example.com/linux/1/</link>
+      <pubDate>Mon, 25 Jul 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Guida] Come installare Arch Linux</title>
+      <link>https://example.com/linux/0/</link>
+      <pubDate>Sat, 23 Jul 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/0/</guid>
+      <description>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa risultare utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.
+Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&amp;rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://example.com/page/about/</link>
+      <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
+      
+      <guid>https://example.com/page/about/</guid>
+      <description>About Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas. Suspendisse eu erat tempor, tristique neque eu, convallis nulla. Curabitur vel bibendum lacus, at semper mauris. Suspendisse aliquet commodo ex, sed sagittis metus aliquam id. Maecenas feugiat rutrum lorem vel imperdiet. Nullam ornare lectus ut enim finibus, et porttitor mi tincidunt. Aenean lacinia, leo quis vehicula eleifend, quam libero sagittis erat, at euismod augue mauris et sapien.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://example.com/page/contact/</link>
+      <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
+      
+      <guid>https://example.com/page/contact/</guid>
+      <description>Contact Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
+    </item>
+    
+    <item>
+      <title>[Walkthrough] Hack The Box - Lame</title>
+      <link>https://example.com/ctf/0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/ctf/0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash CheatSheet</title>
+      <link>https://example.com/cheatsheets/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/bash/</guid>
+      <description>ciaooooo</description>
+    </item>
+    
+    <item>
+      <title>Git CheatSheet</title>
+      <link>https://example.com/cheatsheets/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim CheatSheet</title>
+      <link>https://example.com/cheatsheets/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/vim/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

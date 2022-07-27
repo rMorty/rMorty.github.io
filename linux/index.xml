@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on QSL</title>
+    <link>https://example.com/linux/</link>
+    <description>Recent content in Linux on QSL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it-IT</language>
+    <lastBuildDate>Mon, 25 Jul 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giocare con il terminale</title>
+      <link>https://example.com/linux/1/</link>
+      <pubDate>Mon, 25 Jul 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Guida] Come installare Arch Linux</title>
+      <link>https://example.com/linux/0/</link>
+      <pubDate>Sat, 23 Jul 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/0/</guid>
+      <description>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa risultare utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.
+Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&amp;rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</description>
+    </item>
+    
+  </channel>
+</rss>
