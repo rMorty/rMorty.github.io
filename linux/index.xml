@@ -13,8 +13,7 @@
       <pubDate>Tue, 02 Aug 2022 12:00:00 +0000</pubDate>
       
       <guid>https://example.com/linux/2/</guid>
-      <description>Vediamo come partire da un&amp;rsquo;immagine già esistente nella Docker Hub per poi modificarla e renderla a sua volta disponibile nella Hub.
-Passo 1 - </description>
+      <description>La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&amp;rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&amp;rsquo;immagine generale e configurarla.</description>
     </item>
     
     <item>

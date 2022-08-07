@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://example.com/ctf/</loc>
+    <lastmod>2022-08-04T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/ctf/0/</loc>
+    <lastmod>2022-08-04T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/</loc>
+    <lastmod>2022-08-04T12:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://example.com/linux/2/</loc>
     <lastmod>2022-08-02T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/linux/</loc>
-    <lastmod>2022-08-02T12:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/</loc>
     <lastmod>2022-08-02T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/linux/0/</loc>
@@ -26,15 +32,11 @@
     <loc>https://example.com/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/ctf/0/</loc>
-  </url><url>
     <loc>https://example.com/cheatsheets/bash/</loc>
   </url><url>
     <loc>https://example.com/categories/</loc>
   </url><url>
     <loc>https://example.com/cheatsheets/</loc>
-  </url><url>
-    <loc>https://example.com/ctf/</loc>
   </url><url>
     <loc>https://example.com/cheatsheets/git/</loc>
   </url><url>

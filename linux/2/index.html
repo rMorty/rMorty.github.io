@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Vediamo come partire da un&amp;rsquo;immagine già esistente nella Docker Hub per poi modificarla e renderla a sua volta disponibile nella Hub.
-Passo 1 - " />
+<meta name="description" content="La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&amp;rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&amp;rsquo;immagine generale e configurarla." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -40,15 +39,13 @@ Passo 1 - " />
 
 
 <meta itemprop="name" content="[Guida] Come creare un&#39;immagine Docker personalizzata">
-<meta itemprop="description" content="Vediamo come partire da un&rsquo;immagine già esistente nella Docker Hub per poi modificarla e renderla a sua volta disponibile nella Hub.
-Passo 1 - "><meta itemprop="datePublished" content="2022-08-02T12:00:00+00:00" />
+<meta itemprop="description" content="La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&rsquo;immagine generale e configurarla."><meta itemprop="datePublished" content="2022-08-02T12:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-02T12:00:00+00:00" />
-<meta itemprop="wordCount" content="24">
+<meta itemprop="wordCount" content="640">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Guida] Come creare un&#39;immagine Docker personalizzata"/>
-<meta name="twitter:description" content="Vediamo come partire da un&rsquo;immagine già esistente nella Docker Hub per poi modificarla e renderla a sua volta disponibile nella Hub.
-Passo 1 - "/>
+<meta name="twitter:description" content="La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&rsquo;immagine generale e configurarla."/>
 
 
 
@@ -132,9 +129,71 @@ Passo 1 - "/>
             
 
             <div class="post-content">
-                <p>Vediamo come partire da un&rsquo;immagine già esistente nella Docker Hub per poi modificarla e renderla a sua volta disponibile nella Hub.</p>
-<h3 id="passo-1--">Passo 1 -</h3>
-
+                <p>La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&rsquo;immagine generale e configurarla.</p>
+<blockquote>
+<p><strong>N.B.</strong> Per semplicità in questa guida le modifiche consisteranno in una semplice creazione di un file di testo</p>
+</blockquote>
+<h3 id="passo-1---pull-dellimmagine">Passo 1 - Pull dell&rsquo;immagine</h3>
+<pre tabindex="0"><code>$ docker pull ubuntu
+</code></pre><p>Quindi ora guardando le immagini presenti nel nostro sistema dovremmo ottenere qualcosa simile a questo:</p>
+<pre tabindex="0"><code>$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED      SIZE
+ubuntu                   latest    df5de72bdb3b   4 days ago   77.8MB
+</code></pre><h3 id="passo-2---crezione-e-modifica-del-container">Passo 2 - Crezione e modifica del container</h3>
+<pre tabindex="0"><code>$ docker run -it --name ubuntu df5de72bdb3b /bin/bash
+</code></pre><p>Con questo comando verrà creato il container e avviato automaticamente. Per quanto riguarda i parametri passati:</p>
+<ul>
+<li><em>-it</em> è per poter interagire con il container tramite riga di comando</li>
+<li><em>&ndash;name ubuntu</em> imposta il nome del container a <em>ubuntu</em></li>
+<li><em>/bin/bash</em> è il comando da eseguire<br>
+(Ovviamente per quanto riguarda nome e shell scegliete quelli che preferite)</li>
+</ul>
+<p>Adesso che siamo dentro al container passiamo alle modifiche: spostiamoci nella home e creiamo il file <em>modifiche.txt</em>, e dopo possiamo uscire dal container:</p>
+<pre tabindex="0"><code>$ cd home/
+$ echo &#34;container modificato&#34; &gt; modifiche.txt
+$ exit
+</code></pre><h3 id="passo-3---creazione-dellimmagine-dal-container">Passo 3 - Creazione dell&rsquo;immagine dal container</h3>
+<p>Per prima cosa controlliamo la lista dei container nel nostro sistema:</p>
+<pre tabindex="0"><code>$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED        STATUS                       PORTS     NAMES
+64814f19d3f6   df5de72bdb3b   &#34;/bin/bash&#34;   21 hours ago   Exited (127) 4 minutes ago             ubuntu
+</code></pre><p>Ora usiamo il comando <strong>docker commit</strong> per salvare il container come immagine:</p>
+<pre tabindex="0"><code>$ docker commit ubuntu
+</code></pre><p>Controlliamo la lista delle immagini e dovremmo vedere una nuova immagine (con REPOSITORY e TAG non impostati), che è proprio quella appena creata:</p>
+<pre tabindex="0"><code>$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED          SIZE
+&lt;none&gt;                   &lt;none&gt;    cebba0f4fdab   16 seconds ago   77.8MB
+ubuntu                   latest    df5de72bdb3b   5 days ago       77.8MB
+</code></pre><h3 id="passo-4---tag-dellimmagine">Passo 4 - Tag dell&rsquo;immagine</h3>
+<p>Qui usiamo il comando <strong>docker tag</strong> (ci serve l&rsquo;ID dell&rsquo;immagine, che possiamo prendere dall&rsquo;output del comando precedente):</p>
+<pre tabindex="0"><code>$ docker tag cebba0f4fdab ubuntu_mod
+$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+ubuntu_mod               latest    cebba0f4fdab   6 minutes ago   77.8MB
+ubuntu                   latest    df5de72bdb3b   5 days ago      77.8MB
+</code></pre><p>Adesso proviamo subito a creare un container basato sull&rsquo;immagine che abbiamo taggato. Prima eliminiamo quello da cui siamo partiti:</p>
+<pre tabindex="0"><code>$ docker rm ubuntu
+</code></pre><p>e poi avviamo quello nuovo:</p>
+<pre tabindex="0"><code>$ docker run -it --name ubuntu_mod cebba0f4fdab /bin/bash
+</code></pre><p>Ora che siamo dentro al container, possiamo verificare che tutto sia andato a buon fine spostandoci nella home e controllando che il file che avevamo creato sia effettivamente presente.</p>
+<h3 id="passo-5---push-dellimmagine-nella-docker-hub">Passo 5 - Push dell&rsquo;immagine nella Docker Hub</h3>
+<p>Se vogliamo usare l&rsquo;immagine creata su altri dispositivi, possiamo caricarla in un repository nella Docker Hub (in questo modo poi potremo fare il pull ogni volta che vogliamo, in qualsiasi sistema che abbia Docker installato).</p>
+<ol>
+<li>Facciamo il login su <a href="https://hub.docker.com/">https://hub.docker.com/</a></li>
+<li>Clicchiamo su <em>Create Repository</em> e impostiamo il nome e la descrizione (in questo caso per il nome ho scelto <em>ubuntu_mod</em>)</li>
+<li>Facciamo il login da terminale con</li>
+</ol>
+<pre tabindex="0"><code>$ docker login -u [HubUsername]
+</code></pre><p>ci verrà chiesta la password: inseriamola e, se tutto va bene, verrà restituito un messaggio che termina con <code>Login Succeeded</code>.<br>
+Adesso tagghiamo l&rsquo;immagine per poter fare il push nel repository creato:</p>
+<pre tabindex="0"><code>$ docker tag cebba0f4fdab [HubUsername]/ubuntu_mod:[tag]
+# se non specifichiamo tag verrà usato quello di default &#34;latest&#34;
+</code></pre><p>e finalmente facciamo il push nel repository:</p>
+<pre tabindex="0"><code>$ docker push [HubUsername]/ubuntu_mod
+</code></pre><p>Ora l&rsquo;immagine sarà caricata e chiunque la potrà usare: basterà infatti visitare la pagina del repository e ci sarà il comando da eseguire per scaricarla, che in questo caso sarà:</p>
+<pre tabindex="0"><code>$ docker pull [HubUsername]/ubuntu_mod:[tag]
+# anche qui se omettiamo tag verrà usato &#34;latest&#34;
+</code></pre>
             </div>
         </article>
 
