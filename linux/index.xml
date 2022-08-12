@@ -6,7 +6,25 @@
     <description>Recent content in Linux on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 02 Aug 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
+      <link>https://example.com/linux/3/</link>
+      <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/3/</guid>
+      <description>Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&amp;rsquo;editor di testo nano. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla.</description>
+    </item>
+    
+    <item>
+      <title>[Guida] Come personalizzare il prompt della shell</title>
+      <link>https://example.com/linux/4/</link>
+      <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[Guida] Come creare un&#39;immagine Docker personalizzata</title>
       <link>https://example.com/linux/2/</link>
