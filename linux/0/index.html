@@ -282,14 +282,18 @@ $ pacman -S intel-ucode
 </code></pre><h3 id="passo-9---installare-e-configurare-il-bootloader">Passo 9 - Installare e configurare il bootloader</h3>
 <p>Per installare il bootloader <strong>GRUB</strong> (non è l&rsquo;unico possibile, ma è sicuramente il più usato) prima abbiamo bisogno di questi due pacchetti:</p>
 <pre tabindex="0"><code>$ pacman -S grub efibootmgr
-</code></pre><p>(In caso di installazione accanto ad un altro OS dovremo installare anche il pacchetto <strong>os-prober</strong>).
-Ora dobbiamo montare la partizione EFI:</p>
+</code></pre><blockquote>
+<p>In caso di installazione accanto ad un altro OS dovremo installare anche il pacchetto <strong>os-prober</strong></p>
+</blockquote>
+<p>Ora dobbiamo montare la partizione EFI:</p>
 <pre tabindex="0"><code>$ mkdir /boot/efi
 $ mount /dev/sda1 /boot/efi
 </code></pre><p>A questo punto possiamo installare il bootloader nella partizione appena montata:</p>
 <pre tabindex="0"><code>$ grub-install --removable --target=x86_64-efi --bootloader-id=grub
-</code></pre><p>Se siamo nel caso di dual boot dobbiamo fare un ulteriore passaggio prima di continuare, ovvero abilitare <em>os-prober</em> prima di creare il file di configurazione: apriamo il file <em>/etc/default/grub</em> e decommentiamo la riga<code>#GRUB_DISABLE_OS_PROBER=false</code> (dovrebbe essere l&rsquo;ultima riga del file).
-Ora Generiamo il file di configurazione:</p>
+</code></pre><blockquote>
+<p>Se siamo nel caso di dual boot dobbiamo fare un ulteriore passaggio prima di continuare, ovvero abilitare <em>os-prober</em> prima di creare il file di configurazione: apriamo il file <em>/etc/default/grub</em> e decommentiamo la riga<code>#GRUB_DISABLE_OS_PROBER=false</code> (dovrebbe essere l&rsquo;ultima riga del file)</p>
+</blockquote>
+<p>Ora Generiamo il file di configurazione:</p>
 <pre tabindex="0"><code>$ grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre><h3 id="passo-10---installare-xorg">Passo 10 - Installare Xorg</h3>
 <p><strong>Xorg</strong> è necessario per poter eseguire i programmi che hanno un&rsquo;interfaccia grafica; installiamolo con:</p>

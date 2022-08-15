@@ -41,7 +41,7 @@
 <meta itemprop="name" content="[Guida] Come creare un&#39;immagine Docker personalizzata">
 <meta itemprop="description" content="La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&rsquo;immagine generale e configurarla."><meta itemprop="datePublished" content="2022-08-02T12:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-08-02T12:00:00+00:00" />
-<meta itemprop="wordCount" content="640">
+<meta itemprop="wordCount" content="669">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Guida] Come creare un&#39;immagine Docker personalizzata"/>
@@ -193,7 +193,10 @@ Adesso tagghiamo l&rsquo;immagine per poter fare il push nel repository creato:<
 </code></pre><p>Ora l&rsquo;immagine sarà caricata e chiunque la potrà usare: basterà infatti visitare la pagina del repository e ci sarà il comando da eseguire per scaricarla, che in questo caso sarà:</p>
 <pre tabindex="0"><code>$ docker pull [HubUsername]/ubuntu_mod:[tag]
 # anche qui se omettiamo tag verrà usato &#34;latest&#34;
-</code></pre>
+</code></pre><blockquote>
+<p><strong>N.B.</strong> Possiamo anche decidere di non rendere pubblico il repository e impostarlo come privato direttamente dalla Docker Hub (con l&rsquo;account base però abbiamo a disposizione soltanto un repo privato)</p>
+</blockquote>
+
             </div>
         </article>
 
