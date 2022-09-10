@@ -1,53 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://example.com/linux/3/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/4/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/ctf/</loc>
     <lastmod>2022-08-04T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/ctf/0/</loc>
     <lastmod>2022-08-04T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/2/</loc>
     <lastmod>2022-08-02T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/0/</loc>
     <lastmod>2022-07-27T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/1/</loc>
     <lastmod>2022-07-25T12:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/page/about/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/page/contact/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/cheatsheets/bash/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/categories/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/cheatsheets/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/cheatsheets/git/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://example.com/cheatsheets/vim/</loc>
   </url>
+  
 </urlset>

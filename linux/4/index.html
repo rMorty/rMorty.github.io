@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia da un punto di vista puramente di gusto personale, sia per esempio per adattarlo al meglio al tema impostato nel nostro sistema.
-Innanzitutto c&amp;rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale" />
+<meta name="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -40,15 +39,17 @@ Innanzitutto c&amp;rsquo;è da sapere che la configurazione viene salvata in una
 
 
 <meta itemprop="name" content="[Guida] Come personalizzare il prompt della shell Bash">
-<meta itemprop="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia da un punto di vista puramente di gusto personale, sia per esempio per adattarlo al meglio al tema impostato nel nostro sistema.
-Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale"><meta itemprop="datePublished" content="2022-08-09T12:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-08-09T12:00:00+00:00" />
-<meta itemprop="wordCount" content="90">
+<meta itemprop="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale">
+<meta itemprop="datePublished" content="2022-08-09T12:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-08-09T12:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="308">
+
+
+
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Guida] Come personalizzare il prompt della shell Bash"/>
-<meta name="twitter:description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia da un punto di vista puramente di gusto personale, sia per esempio per adattarlo al meglio al tema impostato nel nostro sistema.
-Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale"/>
+<meta name="twitter:description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale"/>
 
 
 
@@ -132,9 +133,66 @@ Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una var
             
 
             <div class="post-content">
-                <p>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia da un punto di vista puramente di gusto personale, sia per esempio per adattarlo al meglio al tema impostato nel nostro sistema.<br>
-Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente <strong>PS1</strong>: quindi, per controllare quella attuale, diamo da terminale</p>
-<pre tabindex="0"><code>$ echo $PS1
+                <p>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema).
+Innanzitutto c'è da sapere che la configurazione viene salvata in una variabile di ambiente <strong>PS1</strong>: quindi, per controllare quella attuale, diamo da terminale</p>
+<pre><code>$ echo $PS1
+</code></pre><p>È probabile che di default la variabile sia settata a <code>[\u@\h \W]\$</code> o qualcosa di simile, e in particolare ecco il significato dei singoli componenti:</p>
+<ul>
+<li><strong>\u</strong> mostra l&rsquo;username corrente</li>
+<li><strong>\h</strong> hostname</li>
+<li><strong>\W</strong> directory corrente</li>
+<li><strong>\S</strong> mostra <em>#</em> se siamo root, oppure <em>$</em></li>
+</ul>
+<p>Per personalizzare il prompt dobbiamo quindi modificare questa variabile aggiungendo oppure togliendo i componenti relativi alle informazioni che vogliamo vedere. Supponiamo per esempio di volerlo modificare rispetto al precedente, affinchè tra le parentesi venga mostrato solo l&rsquo;username: in questo caso possiamo digitare da terminale</p>
+<pre><code>$ export PS1=&quot;[\u]\$&quot;
+</code></pre><p>Finchè questo comando viene eseguito così da terminale, gli effetti saranno relativi soltanto alla sessione in corso; se vogliamo renderli definitivi dobbiamo invece aggiungerlo al file <code>~/.bash_profile</code> oppure <code>~/.bashrc</code>.<br>
+Per intervenire sui colori invece la sintassi sarà del tipo <code>\e[x;ym$PS1 \e[m</code>, dove:</p>
+<ul>
+<li><strong>\e[</strong> indica che inizia lo schema dei colori</li>
+<li><strong>x;y</strong> è il codice relativo al colore</li>
+<li><strong>\e[m</strong> segnala la fine dello schema dei colori</li>
+</ul>
+<p>In particolare, ecco la lista dei codici dei colori (se vogliamo che il colore sia acceso basta rimpiazzare lo 0 con 1):</p>
+<table>
+<thead>
+<tr>
+<th>Colore</th>
+<th>Codice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nero</td>
+<td>0;30</td>
+</tr>
+<tr>
+<td>Rosso</td>
+<td>0;31</td>
+</tr>
+<tr>
+<td>Verde</td>
+<td>0;32</td>
+</tr>
+<tr>
+<td>Marrone</td>
+<td>0;33</td>
+</tr>
+<tr>
+<td>Blu</td>
+<td>0;34</td>
+</tr>
+<tr>
+<td>Viola</td>
+<td>0;35</td>
+</tr>
+<tr>
+<td>Ciano</td>
+<td>0;36</td>
+</tr>
+</tbody>
+</table>
+<p>Riprendiamo il comando precedente, stavolta però vogliamo che il prompt venga mostrato con una colorazione verde: in questo caso daremo</p>
+<pre><code>$ export PS1=&quot;\e[0;32m[\u]\$ \e[m&quot;
 </code></pre>
             </div>
         </article>
@@ -178,7 +236,7 @@ Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una var
 
 
 
-<script type="text/javascript" src="/bundle.min.feebdc8d801e3fb1791305e362b6d11557f029604dd5b3c27e2686bc88787ee90ae1ccf0afe81bd7d959d7617cfe1fc73062aa82b4e1fa830d6941193d2cbddf.js" integrity="sha512-/uvcjYAeP7F5EwXjYrbRFVfwKWBN1bPCfiaGvIh4fukK4czwr&#43;gb19lZ12F8/h/HMGKqgrTh&#43;oMNaUEZPSy93w=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 

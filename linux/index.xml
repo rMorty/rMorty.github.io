@@ -6,7 +6,11 @@
     <description>Recent content in Linux on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 09 Aug 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
       <link>https://example.com/linux/3/</link>
@@ -22,8 +26,7 @@
       <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
       
       <guid>https://example.com/linux/4/</guid>
-      <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia da un punto di vista puramente di gusto personale, sia per esempio per adattarlo al meglio al tema impostato nel nostro sistema.
-Innanzitutto c&amp;rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
+      <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
     </item>
     
     <item>
