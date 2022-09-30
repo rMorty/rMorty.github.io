@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://example.com/cheatsheets/bash/</loc>
+    <lastmod>2022-09-19T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/cheatsheets/</loc>
+    <lastmod>2022-09-19T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2022-09-19T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/3/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
   </url>
@@ -14,11 +29,6 @@
   
   <url>
     <loc>https://example.com/linux/</loc>
-    <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
   </url>
   
@@ -63,15 +73,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/cheatsheets/bash/</loc>
-  </url>
-  
-  <url>
     <loc>https://example.com/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://example.com/cheatsheets/</loc>
   </url>
   
   <url>

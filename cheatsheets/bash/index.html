@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="ciaooooo" />
+<meta name="description" content="Intro Variabili NAME=&amp;quot;Qsl&amp;quot; echo $VAR echo &amp;quot;$VAR&amp;quot; echo &amp;quot;${VAR}&amp;quot; Apici stringhe NAME=&amp;quot;Qsl&amp;quot; echo &amp;quot;Hello $NAME&amp;quot; -&amp;gt; Hello Qsl echo &#39;Hello $NAME&#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;quot;Mi trovo in $(pwd)&amp;quot; echo &amp;quot;Mi trovo in `pwd`&amp;quot; Funzioni print_world() { echo &amp;quot;World!&amp;quot; } echo &amp;quot;Hello $(print_world)&amp;quot; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -25,7 +25,7 @@
 
 
 
-<link rel="stylesheet" href="/main.9fa7ada1b3ab7f93ef4e615675031697afcc24dcda31168a910d1857901fad25.css">
+<link rel="stylesheet" href="/main.30dc624ed2d3b53075042adb2d44b72b7c1d6223e0a37e87fa84d9bc4f86e315.css">
 
 
 
@@ -39,22 +39,25 @@
 
 
 <meta itemprop="name" content="Bash CheatSheet">
-<meta itemprop="description" content="ciaooooo">
-
-<meta itemprop="wordCount" content="1">
+<meta itemprop="description" content="Intro Variabili NAME=&quot;Qsl&quot; echo $VAR echo &quot;$VAR&quot; echo &quot;${VAR}&quot; Apici stringhe NAME=&quot;Qsl&quot; echo &quot;Hello $NAME&quot; -&gt; Hello Qsl echo &#39;Hello $NAME&#39; -&gt; Hello $NAME Inserire comandi echo &quot;Mi trovo in $(pwd)&quot; echo &quot;Mi trovo in `pwd`&quot; Funzioni print_world() { echo &quot;World!&quot; } echo &quot;Hello $(print_world)&quot; -&gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.">
+<meta itemprop="datePublished" content="2022-09-19T12:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-09-19T12:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="587">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bash CheatSheet"/>
-<meta name="twitter:description" content="ciaooooo"/>
+<meta name="twitter:description" content="Intro Variabili NAME=&quot;Qsl&quot; echo $VAR echo &quot;$VAR&quot; echo &quot;${VAR}&quot; Apici stringhe NAME=&quot;Qsl&quot; echo &quot;Hello $NAME&quot; -&gt; Hello Qsl echo &#39;Hello $NAME&#39; -&gt; Hello $NAME Inserire comandi echo &quot;Mi trovo in $(pwd)&quot; echo &quot;Mi trovo in `pwd`&quot; Funzioni print_world() { echo &quot;World!&quot; } echo &quot;Hello $(print_world)&quot; -&gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0."/>
 
 
 
 
 
 
+
+    <meta property="article:published_time" content="2022-09-19 12:00:00 &#43;0000 UTC" />
 
 
 
@@ -130,8 +133,283 @@
             
 
             <div class="post-content">
-                <p>ciaooooo</p>
+                <h1 id="intro">Intro</h1>
+<h3 id="variabili">Variabili</h3>
+<pre><code>NAME=&quot;Qsl&quot;
+echo $VAR
+echo &quot;$VAR&quot;
+echo &quot;${VAR}&quot;
+</code></pre><h3 id="apici-stringhe">Apici stringhe</h3>
+<pre><code>NAME=&quot;Qsl&quot;
+echo &quot;Hello $NAME&quot;  -&gt;  Hello Qsl
+echo 'Hello $NAME'  -&gt;  Hello $NAME
+</code></pre><h3 id="inserire-comandi">Inserire comandi</h3>
+<pre><code>echo &quot;Mi trovo in $(pwd)&quot;
+echo &quot;Mi trovo in `pwd`&quot;
+</code></pre><h3 id="funzioni">Funzioni</h3>
+<pre><code>print_world() {
+    echo &quot;World!&quot;
+}
 
+echo &quot;Hello $(print_world)&quot;  -&gt;  Hello World!
+</code></pre><h1 id="loops">Loops</h1>
+<h3 id="base">Base</h3>
+<pre><code>for i in /etc/rc.*; do
+    echo $i
+done
+</code></pre><h3 id="range">Range</h3>
+<pre><code>for i in {1..10}; do
+    echo $i
+done
+
+# con incremento
+for i in {0..100..10}; do
+    echo $i
+done
+</code></pre><h3 id="c-like">C-like</h3>
+<pre><code>for ((i = 0 ; i &lt; 100 ; i++)); do
+    echo $i
+done
+</code></pre><h3 id="leggere-righe-di-un-file">Leggere righe di un file</h3>
+<pre><code>cat file.txt | while read line; do
+    echo $line
+done
+</code></pre><h3 id="ciclo-infinito">Ciclo infinito</h3>
+<pre><code>while true; do
+    [...]
+done
+</code></pre><h1 id="funzioni-1">Funzioni</h1>
+<h3 id="definizione">Definizione</h3>
+<pre><code>myfun() {
+    echo &quot;Hello $1&quot;
+}
+
+# Sintassi alternativa
+function myfun() {
+    echo &quot;Hello $1&quot;
+}
+
+myfun &quot;Qsl&quot;  -&gt;  Hello Qsl
+</code></pre><h3 id="argomenti">Argomenti</h3>
+<ul>
+<li><strong>$#</strong> numero di argomenti</li>
+<li><strong>$*</strong> tutti gli argomenti (come singole parole)</li>
+<li><strong>$@</strong> tutti gli argomenti (come stringhe separate)</li>
+<li><strong>$1</strong> primo argomento</li>
+<li><strong>$_</strong> ultimo argomento del comando precedente</li>
+</ul>
+<blockquote>
+<p><strong>N.B.</strong> <em>$@</em> e <em>$*</em> devono essere usate con i doppi apici per avere questo comportamento, altrimenti fanno la stessa cosa (separano gli argomenti come stringhe)</p>
+</blockquote>
+<h3 id="ritorno-valori">Ritorno valori</h3>
+<pre><code>myfun() {
+    local res='Qsl'
+    echo $res
+}
+
+result=&quot;$(myfun)&quot;
+echo $result  -&gt;  Qsl
+</code></pre><h3 id="errori">Errori</h3>
+<pre><code>myfun() {
+    return 1
+}
+
+if myfun; then
+    echo &quot;success&quot;
+else
+    echo &quot;failure&quot;
+fi                  -&gt;  failure
+</code></pre><h1 id="condizionali">Condizionali</h1>
+<h3 id="stringhe-e-numeri">Stringhe e Numeri</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[ -z STRING]]</td>
+<td>Stringa vuota</td>
+</tr>
+<tr>
+<td>[[ -n STRING]]</td>
+<td>tringa non vuota</td>
+</tr>
+<tr>
+<td>[[ STRING == STRING ]]</td>
+<td>Uguali</td>
+</tr>
+<tr>
+<td>[[ STRING != STRING ]]</td>
+<td>Diverse</td>
+</tr>
+<tr>
+<td>[[ STRING =~ pattern ]]</td>
+<td>Regexp</td>
+</tr>
+<tr>
+<td>[[ NUM -eq NUM ]]</td>
+<td>Uguali</td>
+</tr>
+<tr>
+<td>[[ NUM -ne NUM ]]</td>
+<td>Diversi</td>
+</tr>
+<tr>
+<td>[[ NUM -lt NUM ]]</td>
+<td>Minore</td>
+</tr>
+<tr>
+<td>[[ NUM -le NUM ]]</td>
+<td>Minore o uguale</td>
+</tr>
+<tr>
+<td>[[ NUM -gt NUM ]]</td>
+<td>Maggiore</td>
+</tr>
+<tr>
+<td>[[ NUM -ge NUM ]]</td>
+<td>Maggiore o uguale</td>
+</tr>
+<tr>
+<td>(( NUM &gt; NUM ))</td>
+<td>Condizioni aritmetiche</td>
+</tr>
+</tbody>
+</table>
+<h3 id="file">File</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[ -e FILE ]]</td>
+<td>Esiste</td>
+</tr>
+<tr>
+<td>[[ -r FILE ]]</td>
+<td>Leggibile</td>
+</tr>
+<tr>
+<td>[[ -h FILE ]]</td>
+<td>Symlink</td>
+</tr>
+<tr>
+<td>[[ -d FILE ]]</td>
+<td>Directory</td>
+</tr>
+<tr>
+<td>[[ -w FILE ]]</td>
+<td>Scrivibile</td>
+</tr>
+<tr>
+<td>[[ -s FILE ]]</td>
+<td>Dimensione è &gt; 0 bytes</td>
+</tr>
+<tr>
+<td>[[ -f FILE ]]</td>
+<td>File normale</td>
+</tr>
+<tr>
+<td>[[ -x FILE ]]</td>
+<td>Eseguibile</td>
+</tr>
+<tr>
+<td>[[ FILE1 -nt FILE2 ]]</td>
+<td>1 più recente di 2</td>
+</tr>
+<tr>
+<td>[[ FILE1 -ot FILE2 ]]</td>
+<td>2 più recente</td>
+</tr>
+<tr>
+<td>[[ FILE1 -ef FILE2 ]]</td>
+<td>Stessi file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logica">Logica</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Significato</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[ ! EXPR ]]</td>
+<td>Not</td>
+</tr>
+<tr>
+<td>[[ X &amp;&amp; Y ]]</td>
+<td>And</td>
+</tr>
+<tr>
+<td>[[ X || Y ]]</td>
+<td>Or</td>
+</tr>
+</tbody>
+</table>
+<h1 id="array">Array</h1>
+<h3 id="definizione-1">Definizione</h3>
+<pre><code>Giorni=('lun' 'mar' 'mer' 'gio')
+
+# Sintassi alternativa
+Giorni[0]='lun'
+Giorni[1]='mar'
+Giorni[2]='mer'
+Giorni[3]='gio'
+</code></pre><h3 id="indicizzazione">Indicizzazione</h3>
+<pre><code>echo ${Giorni[0]}           # Elemento #0
+echo ${Giorni[-1]}          # Ultimo elemento
+echo ${Giorni[@]}           # Tutti gli elementi, separati da spazio
+echo ${#Giorni[@]}          # Numero di elementi
+echo ${#Giorni}             # Lunghezza stringa del primo elemento
+echo ${#Giorni[N]}          # Lunghezza stringa del N-esimo elemento
+echo ${Giorni[@]:1:2}       # Range (da elemento di indice 1 al 2)
+echo ${!Giorni[@]}          # Indice di tutti gli elementi, separati da spazio
+</code></pre><h3 id="operazioni">Operazioni</h3>
+<pre><code>Giorni=(&quot;$Giorni[@]&quot; &quot;ven&quot;)                 # Push
+Giorni+=('gio')                             # Altro push
+Giorni=( ${Giorni[@]/lu*/} )                # Rimuovi elementi con regex match
+unset Giorni[2]                             # Rimuovi elemento per indice
+GiorniDup=(&quot;${Giorni[@]}&quot;)                  # Duplicazione
+GiorniCon=(&quot;${Giorni[@]}&quot; &quot;${Giorni[@]}&quot;)   # Concatenazione
+lines=(`cat &quot;file&quot;`)                        # Crea array dalla lettura del file
+</code></pre><h3 id="iterazione">Iterazione</h3>
+<pre><code>for i in &quot;${Giorni[@]}&quot;; do
+    echo $i
+done
+</code></pre><h1 id="dizionari">Dizionari</h1>
+<h3 id="definizione-2">Definizione</h3>
+<pre><code>declare -a voti
+voti[fisica]=25
+voti[matematica]=30
+voti[inglese]=&quot;sv&quot;
+</code></pre><h3 id="operazioni-1">Operazioni</h3>
+<pre><code>echo ${voti[fisica]}    # valore della chiave 'fisica'
+echo ${voti[@]}         # tutti i valori
+echo ${!voti[@]}        # tutte le chiavi
+echo ${#voti[#]}        # numero di elementi
+unset voti[fisica]      # rimuovi
+</code></pre><h3 id="iterazione-1">Iterazione</h3>
+<pre><code># iterare per valore
+for val in &quot;${voti[@]}&quot;; do
+    echo $val
+done
+
+# iterare per chiave
+for key in &quot;{!voti[@]}&quot;; do
+    echo $key
+done
+</code></pre>
             </div>
         </article>
 

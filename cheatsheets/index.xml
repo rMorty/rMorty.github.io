@@ -6,6 +6,7 @@
     <description>Recent content in Cheatsheets on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
+    <lastBuildDate>Mon, 19 Sep 2022 12:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,10 +14,10 @@
     <item>
       <title>Bash CheatSheet</title>
       <link>https://example.com/cheatsheets/bash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 19 Sep 2022 12:00:00 +0000</pubDate>
       
       <guid>https://example.com/cheatsheets/bash/</guid>
-      <description>ciaooooo</description>
+      <description>Intro Variabili NAME=&amp;quot;Qsl&amp;quot; echo $VAR echo &amp;quot;$VAR&amp;quot; echo &amp;quot;${VAR}&amp;quot; Apici stringhe NAME=&amp;quot;Qsl&amp;quot; echo &amp;quot;Hello $NAME&amp;quot; -&amp;gt; Hello Qsl echo &#39;Hello $NAME&#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;quot;Mi trovo in $(pwd)&amp;quot; echo &amp;quot;Mi trovo in `pwd`&amp;quot; Funzioni print_world() { echo &amp;quot;World!&amp;quot; } echo &amp;quot;Hello $(print_world)&amp;quot; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.</description>
     </item>
     
     <item>

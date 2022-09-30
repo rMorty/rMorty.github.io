@@ -6,10 +6,19 @@
     <description>Recent content on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 09 Aug 2022 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Sep 2022 12:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash CheatSheet</title>
+      <link>https://example.com/cheatsheets/bash/</link>
+      <pubDate>Mon, 19 Sep 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/bash/</guid>
+      <description>Intro Variabili NAME=&amp;quot;Qsl&amp;quot; echo $VAR echo &amp;quot;$VAR&amp;quot; echo &amp;quot;${VAR}&amp;quot; Apici stringhe NAME=&amp;quot;Qsl&amp;quot; echo &amp;quot;Hello $NAME&amp;quot; -&amp;gt; Hello Qsl echo &#39;Hello $NAME&#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;quot;Mi trovo in $(pwd)&amp;quot; echo &amp;quot;Mi trovo in `pwd`&amp;quot; Funzioni print_world() { echo &amp;quot;World!&amp;quot; } echo &amp;quot;Hello $(print_world)&amp;quot; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.</description>
+    </item>
     
     <item>
       <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
@@ -35,7 +44,7 @@
       <pubDate>Thu, 04 Aug 2022 12:00:00 +0000</pubDate>
       
       <guid>https://example.com/ctf/0/</guid>
-      <description>Wireshark doo dooo do doo&amp;hellip; </description>
+      <description>Wireshark doo dooo do doo&amp;hellip; Apriamo con Wireshark il file scaricato e vediamo che ci sono pacchetti TCP e HTTP. Clicchiamo per esempio sul primo pacchetto TCP, poi dal menu di Wireshark Analyze-&amp;gt;Follow-&amp;gt;TCP STream e analizziamo il traffico TCP. Nello stream 5 troviamo una stringa avente formato simile alle flags di picoCTF, ma sicuramente deve essere stata cifrata con qualche algoritmo. Possiamo usare un cipher identifier online: incolliamo la stringa e scopriamo che è stata cifrata con ROT13, decifriamola e otteniamo la bandiera della CTF.</description>
     </item>
     
     <item>
@@ -82,15 +91,6 @@ Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa oc
       
       <guid>https://example.com/page/contact/</guid>
       <description>Contact Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
-    </item>
-    
-    <item>
-      <title>Bash CheatSheet</title>
-      <link>https://example.com/cheatsheets/bash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/cheatsheets/bash/</guid>
-      <description>ciaooooo</description>
     </item>
     
     <item>
