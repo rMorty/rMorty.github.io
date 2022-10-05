@@ -6,10 +6,26 @@
     <description>Recent content in Cheatsheets on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Mon, 19 Sep 2022 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TTY Escape Cheatsheet</title>
+      <link>https://example.com/cheatsheets/tty-escape/</link>
+      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/tty-escape/</guid>
+      <description>Spesso durante una CTF, dopo aver ottenuto l&amp;rsquo;accesso alla macchina per esempio attraverso una reverse/bind shell, ci ritroviamo di fronte ad una shell non interattiva che ci offre quindi un&amp;rsquo;esperienza limitata; è sempre bene perciò cercare di ottenerne una interattiva.
+Prima vediamo come ottenere una shell TTY:
+$ python -c &#39;import pty; pty.spawn(&amp;quot;/bin/sh&amp;quot;)&#39;
+$ echo os.system(&#39;/bin/bash&#39;)
+$ /bin/bash -i
+$ perl —e &#39;exec &amp;quot;/bin/sh&amp;quot;;&#39;
+$ perl: exec &amp;quot;/bin/sh&amp;quot;;
+$ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
+    </item>
     
     <item>
       <title>Bash CheatSheet</title>

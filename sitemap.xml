@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://example.com/cheatsheets/</loc>
+    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/linux/5/</loc>
     <lastmod>2022-10-05T00:00:00+00:00</lastmod>
   </url>
@@ -18,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://example.com/cheatsheets/bash/</loc>
-    <lastmod>2022-09-19T12:00:00+00:00</lastmod>
+    <loc>https://example.com/cheatsheets/tty-escape/</loc>
+    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/cheatsheets/</loc>
+    <loc>https://example.com/cheatsheets/bash/</loc>
     <lastmod>2022-09-19T12:00:00+00:00</lastmod>
   </url>
   
