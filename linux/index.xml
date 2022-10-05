@@ -6,10 +6,19 @@
     <description>Recent content in Linux on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 09 Aug 2022 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash</title>
+      <link>https://example.com/linux/5/</link>
+      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linux/5/</guid>
+      <description>Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</description>
+    </item>
     
     <item>
       <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
