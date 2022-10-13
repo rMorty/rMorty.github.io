@@ -4,7 +4,17 @@
   
   <url>
     <loc>https://example.com/cheatsheets/</loc>
-    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-06T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2022-10-06T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/cheatsheets/vim/</loc>
+    <lastmod>2022-10-06T12:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>https://example.com/linux/</loc>
-    <lastmod>2022-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/</loc>
     <lastmod>2022-10-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -92,10 +97,6 @@
   
   <url>
     <loc>https://example.com/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://example.com/cheatsheets/vim/</loc>
   </url>
   
 </urlset>

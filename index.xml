@@ -6,10 +6,22 @@
     <description>Recent content on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Oct 2022 12:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vim CheatSheet</title>
+      <link>https://example.com/cheatsheets/vim/</link>
+      <pubDate>Thu, 06 Oct 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/vim/</guid>
+      <description>Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;
+:sav[eas] nomefile - salva file come
+clo[se] - chiudi finestra corrente
+ter[minal] - apri finestra terminale</description>
+    </item>
     
     <item>
       <title>Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash</title>
@@ -124,15 +136,6 @@ Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa oc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/cheatsheets/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim CheatSheet</title>
-      <link>https://example.com/cheatsheets/vim/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/cheatsheets/vim/</guid>
       <description></description>
     </item>
     
