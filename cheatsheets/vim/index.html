@@ -8,7 +8,14 @@
 <meta name="description" content="Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;
 :sav[eas] nomefile - salva file come
 clo[se] - chiudi finestra corrente
-ter[minal] - apri finestra terminale" />
+ter[minal] - apri finestra terminale
+K - apri pagina man per la parola sotto il cursore
+Cursore h - muovi a sinistra
+j - muovi in basso
+k - muovi in alto
+l - muovi a destra
+gj - muovi in basso (g volte)
+gk - muovi in alto (g volte)" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -28,7 +35,7 @@ ter[minal] - apri finestra terminale" />
 
 
 
-<link rel="stylesheet" href="/main.507f79b1197b4748a02da8f12e67379164d61336b8302da7ac75bbf021456b06.css">
+<link rel="stylesheet" href="/main.84e671f58f6f339fd312187bf62b6ec2ed940a856010a75707329c4c4f266d3f.css">
 
 
 
@@ -45,10 +52,17 @@ ter[minal] - apri finestra terminale" />
 <meta itemprop="description" content="Global :h[elp] keyword - apri l&rsquo;help di &ldquo;keyword&rdquo;
 :sav[eas] nomefile - salva file come
 clo[se] - chiudi finestra corrente
-ter[minal] - apri finestra terminale">
+ter[minal] - apri finestra terminale
+K - apri pagina man per la parola sotto il cursore
+Cursore h - muovi a sinistra
+j - muovi in basso
+k - muovi in alto
+l - muovi a destra
+gj - muovi in basso (g volte)
+gk - muovi in alto (g volte)">
 <meta itemprop="datePublished" content="2022-10-06T12:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2022-10-06T12:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="24">
+<meta itemprop="wordCount" content="678">
 
 
 
@@ -58,7 +72,14 @@ ter[minal] - apri finestra terminale">
 <meta name="twitter:description" content="Global :h[elp] keyword - apri l&rsquo;help di &ldquo;keyword&rdquo;
 :sav[eas] nomefile - salva file come
 clo[se] - chiudi finestra corrente
-ter[minal] - apri finestra terminale"/>
+ter[minal] - apri finestra terminale
+K - apri pagina man per la parola sotto il cursore
+Cursore h - muovi a sinistra
+j - muovi in basso
+k - muovi in alto
+l - muovi a destra
+gj - muovi in basso (g volte)
+gk - muovi in alto (g volte)"/>
 
 
 
@@ -93,7 +114,7 @@ ter[minal] - apri finestra terminale"/>
             <span class="logo__text">$ cd ~</span>
             <span class="logo__cursor" style=
                   "
-                   background-color:#aca2e9;
+                   background-color:#6357a9;
                    animation-duration:3s;">
             </span>
         
@@ -146,7 +167,111 @@ ter[minal] - apri finestra terminale"/>
 <p><code>:h[elp] keyword</code> - apri l&rsquo;help di &ldquo;keyword&rdquo;<br>
 <code>:sav[eas] nomefile</code> - salva file come<br>
 <code>clo[se]</code> - chiudi finestra corrente<br>
-<code>ter[minal]</code> - apri finestra terminale</p>
+<code>ter[minal]</code> - apri finestra terminale<br>
+<code>K</code> - apri pagina man per la parola sotto il cursore</p>
+<h3 id="cursore">Cursore</h3>
+<p><code>h</code> - muovi a sinistra<br>
+<code>j</code> - muovi in basso<br>
+<code>k</code> - muovi in alto<br>
+<code>l</code> - muovi a destra<br>
+<code>gj</code> - muovi in basso (g volte)<br>
+<code>gk</code> - muovi in alto (g volte)<br>
+<code>H</code> - muovi all&rsquo;inizio dello schermo<br>
+<code>M</code> - muovi in mezzo allo schermo<br>
+<code>L</code> - muovi in fondo allo schermo</p>
+<p><code>w</code> - inizio prossima parola<br>
+<code>W</code> - inizio prossima parola (la parola può contenere punteggiatura)<br>
+<code>e</code> - fine prossima parola<br>
+<code>E</code> - fine prossima parola (punteggiatura)<br>
+<code>b</code> - inizio parola precedente<br>
+<code>B</code> - inizio parola precedente (punteggiatura)</p>
+<p><code>0</code> - inizio della riga<br>
+<code>^</code> - primo carattere non vuoto della riga<br>
+<code>$</code> - fine della riga<br>
+<code>g_</code> - ultimo carattere non vuoto della riga<br>
+<code>gg</code> - prima riga del file<br>
+<code>G</code> - ultima riga del file<br>
+<code>5gg</code> o <code>5G</code> - vai a riga 5<br>
+<code>gd</code> - vai a dichiarazione locale<br>
+<code>gD</code> - vai a dichiarazione globale</p>
+<p><code>fx</code> - prossima occorrenza del carattere <em>x</em><br>
+<code>tx</code> - (carattere precedente) prossima occorrenza di <em>x</em><br>
+<code>Fx</code> - occorrenza precedente di <em>x</em><br>
+<code>Tx</code> - (carattere successivo) occorrenza precedente di <em>x</em><br>
+<code>;</code> - ripeti il comando f,t,F,T precedente<br>
+<code>,</code> - ripeti al contrario<br>
+<code>}</code> - prossimo paragrafo (o funzione/blocco)<br>
+<code>{</code> - paragrafo precedente</p>
+<p><code>zz</code> - centra il cursore nello schermo<br>
+<code>Ctrl</code>+<code>e</code> - muovi schermo in basso di una riga (senza muovere il cursore)<br>
+<code>Ctrl</code>+<code>y</code> - muovi schermo in alto di una riga (uguale)<br>
+<code>Ctrl</code>+<code>b</code> - vai indietro di uno schermo<br>
+<code>Ctrl</code>+<code>f</code> - vai avanti di uno schermo<br>
+<code>Ctrl</code>+<code>d</code> - vai avanti di mezzo schermo<br>
+<code>Ctrl</code>+<code>u</code> - vai indietro di mezzo schermo</p>
+<h3 id="insert-mode">Insert Mode</h3>
+<p><code>i</code> - inserisci prima del cursore<br>
+<code>I</code> - inserisci all&rsquo;inizio della riga<br>
+<code>a</code> - inserisci dopo il cursore<br>
+<code>A</code> - inserisci alla fine della riga<br>
+<code>o</code> - crea e inserisci in nuova riga sotto quella corrente<br>
+<code>O</code> - crea e inserisci in nuova riga sopra quella corrente<br>
+<code>ea</code> - inserisci alla fine della prossima parola<br>
+<code>Ctrl</code>+<code>j</code> - crea nuova riga (in Insert Mode)<br>
+<code>Ctrl</code>+<code>t</code> - sposta la riga a avanti di un tab (in Insert Mode)<br>
+<code>Ctrl</code>+<code>d</code> - sposta la riga indietro di un tab (in Inser Mode)<br>
+<code>Ctrl</code>+<code>ox</code> - entra temporaneamente in modalità normale per eseguire il comando <em>x</em></p>
+<h3 id="modificare-testo">Modificare testo</h3>
+<p><code>x</code> - elimina carattere<br>
+<code>r</code> - rimpiazza carattere<br>
+<code>R</code> - rimpiazza caratteri (finchè non premi ESC)<br>
+<code>J</code> - unisci la linea sotto a quella corrente con uno spazio in mezzo<br>
+<code>gJ</code> - senza spazio<br>
+<code>gwip</code> - ri-formatta paragrafo<br>
+<code>cc</code> - rimpiazza intera riga<br>
+<code>ciw</code> - rimpiazza intera parola<br>
+<code>s</code> - cancella carattere e rimpiazza<br>
+<code>u</code> - undo<br>
+<code>U</code> - ripristina linea corrente<br>
+<code>Ctrl</code>+<code>r</code> - redo<br>
+<code>.</code> - ripeti ultimo comando</p>
+<h3 id="visual-mode">Visual Mode</h3>
+<p><code>v</code> - entra in Visual Mode<br>
+<code>o</code> oppure <code>O</code> - vai a inizio/fine del testo selezionato <br>
+<code>Ctrl</code>+<code>v</code> - Visual Block Mode<br>
+<code>aw</code> - seleziona parola<br>
+<code>ab</code> - seleziona un blocco con ()<br>
+<code>aB</code> - blocco con {}<br>
+<code>at</code> - blocco con &lt;&gt;<br>
+<code>ib</code> - contenuto del blocco tra ()<br>
+<code>iB</code> - contenuto del blocco tra {}<br>
+<code>it</code> - contenuto del blocco &lt;&gt;<br>
+<code>ESC</code> - esci da Visual Mode</p>
+<blockquote>
+<p>possiamo usare <strong>(</strong> o <strong>{</strong> al posto di <strong>b</strong> o <strong>B</strong> (rispettivamente)</p>
+</blockquote>
+<p><code>&gt;</code> - shifta il testo a destra<br>
+<code>&lt;</code> - shifta il testo a sinistra<br>
+<code>y</code> - copia testo selezionato<br>
+<code>p</code> - incolla testo selezionato<br>
+<code>d</code> - cancella testo selezionato<br>
+<code>~</code> - inverti maiusc/minusc testo selezionato<br>
+<code>u</code> - converti testo selezionato a minuscolo<br>
+<code>U</code> - converti testo selezionato a maiuscolo</p>
+<h3 id="registri">Registri</h3>
+<p><code>:reg[isters]</code> - mostra contenuto resitri<br>
+<code>&quot;xy</code> - copia nel registro <em>x</em><br>
+<code>&quot;xp</code> - incolla contenuto del registro <em>x</em><br>
+<code>&quot;+y</code> - copia nel registro clipboard di sistema<br>
+<code>&quot;+p</code> - incolla contenuto del registro clipboard di sistema</p>
+<blockquote>
+<p>I registri sono memorizzati in ~/.viminfo e ri-caricati al prossimo restart di vim</p>
+</blockquote>
+<h3 id="posizione-e-marks">Posizione e marks</h3>
+<p><code>:marks</code> - lista dei marks<br>
+<code>ma</code> - setta il mark <em>a</em> alla posizione corrente<br>
+<code>'a</code> - salta alla posizione del mark <em>a</em><br>
+<code>y'a</code> - copia il testo</p>
 
             </div>
         </article>

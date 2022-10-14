@@ -20,7 +20,14 @@
       <description>Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;
 :sav[eas] nomefile - salva file come
 clo[se] - chiudi finestra corrente
-ter[minal] - apri finestra terminale</description>
+ter[minal] - apri finestra terminale
+K - apri pagina man per la parola sotto il cursore
+Cursore h - muovi a sinistra
+j - muovi in basso
+k - muovi in alto
+l - muovi a destra
+gj - muovi in basso (g volte)
+gk - muovi in alto (g volte)</description>
     </item>
     
     <item>
