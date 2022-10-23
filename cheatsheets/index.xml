@@ -22,12 +22,10 @@
 clo[se] - chiudi finestra corrente
 ter[minal] - apri finestra terminale
 K - apri pagina man per la parola sotto il cursore
-Cursore h - muovi a sinistra
-j - muovi in basso
-k - muovi in alto
-l - muovi a destra
-gj - muovi in basso (g volte)
-gk - muovi in alto (g volte)</description>
+Salvare e Uscire :w - salva, ma non uscire
+:w !sudo tee % - salva usando sudo
+:wq o :x o ZZ - salva ed esci
+:q - esci (fallisce se ci sono modifiche non salvate)</description>
     </item>
     
     <item>

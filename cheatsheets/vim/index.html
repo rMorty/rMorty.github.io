@@ -10,12 +10,10 @@
 clo[se] - chiudi finestra corrente
 ter[minal] - apri finestra terminale
 K - apri pagina man per la parola sotto il cursore
-Cursore h - muovi a sinistra
-j - muovi in basso
-k - muovi in alto
-l - muovi a destra
-gj - muovi in basso (g volte)
-gk - muovi in alto (g volte)" />
+Salvare e Uscire :w - salva, ma non uscire
+:w !sudo tee % - salva usando sudo
+:wq o :x o ZZ - salva ed esci
+:q - esci (fallisce se ci sono modifiche non salvate)" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -54,15 +52,13 @@ gk - muovi in alto (g volte)" />
 clo[se] - chiudi finestra corrente
 ter[minal] - apri finestra terminale
 K - apri pagina man per la parola sotto il cursore
-Cursore h - muovi a sinistra
-j - muovi in basso
-k - muovi in alto
-l - muovi a destra
-gj - muovi in basso (g volte)
-gk - muovi in alto (g volte)">
+Salvare e Uscire :w - salva, ma non uscire
+:w !sudo tee % - salva usando sudo
+:wq o :x o ZZ - salva ed esci
+:q - esci (fallisce se ci sono modifiche non salvate)">
 <meta itemprop="datePublished" content="2022-10-06T12:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2022-10-06T12:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="678">
+<meta itemprop="wordCount" content="1225">
 
 
 
@@ -74,12 +70,10 @@ gk - muovi in alto (g volte)">
 clo[se] - chiudi finestra corrente
 ter[minal] - apri finestra terminale
 K - apri pagina man per la parola sotto il cursore
-Cursore h - muovi a sinistra
-j - muovi in basso
-k - muovi in alto
-l - muovi a destra
-gj - muovi in basso (g volte)
-gk - muovi in alto (g volte)"/>
+Salvare e Uscire :w - salva, ma non uscire
+:w !sudo tee % - salva usando sudo
+:wq o :x o ZZ - salva ed esci
+:q - esci (fallisce se ci sono modifiche non salvate)"/>
 
 
 
@@ -125,7 +119,7 @@ gk - muovi in alto (g volte)"/>
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/cheatsheets/">CheatSheets</a></li><li><a href="/ctf/">CTF</a></li><li><a href="/linux/">Linux</a></li>
+    <ul class="menu__inner"><li><a href="/cheatsheets/">CheatSheets</a></li><li><a href="/ctf/">CTF</a></li><li><a href="/linux/">Posts</a></li>
     </ul>
 </nav>
 
@@ -169,6 +163,13 @@ gk - muovi in alto (g volte)"/>
 <code>clo[se]</code> - chiudi finestra corrente<br>
 <code>ter[minal]</code> - apri finestra terminale<br>
 <code>K</code> - apri pagina man per la parola sotto il cursore</p>
+<h3 id="salvare-e-uscire">Salvare e Uscire</h3>
+<p><code>:w</code> - salva, ma non uscire<br>
+<code>:w !sudo tee %</code> - salva usando sudo<br>
+<code>:wq</code> o <code>:x</code> o <code>ZZ</code> - salva ed esci<br>
+<code>:q</code> - esci (fallisce se ci sono modifiche non salvate)<br>
+<code>:q!</code> o <code>ZQ</code> - esci senza salvare<br>
+<code>:wqa</code> - salva ed esci da tutti i tab</p>
 <h3 id="cursore">Cursore</h3>
 <p><code>h</code> - muovi a sinistra<br>
 <code>j</code> - muovi in basso<br>
@@ -237,7 +238,7 @@ gk - muovi in alto (g volte)"/>
 <code>.</code> - ripeti ultimo comando</p>
 <h3 id="visual-mode">Visual Mode</h3>
 <p><code>v</code> - entra in Visual Mode<br>
-<code>o</code> oppure <code>O</code> - vai a inizio/fine del testo selezionato <br>
+<code>o</code> oppure <code>O</code> - vai a inizio/fine del testo selezionato<br>
 <code>Ctrl</code>+<code>v</code> - Visual Block Mode<br>
 <code>aw</code> - seleziona parola<br>
 <code>ab</code> - seleziona un blocco con ()<br>
@@ -271,7 +272,67 @@ gk - muovi in alto (g volte)"/>
 <p><code>:marks</code> - lista dei marks<br>
 <code>ma</code> - setta il mark <em>a</em> alla posizione corrente<br>
 <code>'a</code> - salta alla posizione del mark <em>a</em><br>
-<code>y'a</code> - copia il testo</p>
+<code>y'a</code> - copia il testo alla posizione del mark <em>a</em><br>
+<code>'0</code> - vai a posizione in cui è stato precedentemente chiuso Vim<br>
+<code>'&quot;</code> - vai a posizione in cui eri quando hai modificato il file l&rsquo;ultima volta<br>
+<code>'.</code> - vai a posizione dell&rsquo;ultima modifica<br>
+<code>''</code> - vai a poisizione prima dell&rsquo;ultimo salto<br>
+<code>:ju[mps]</code> - lista dei salti<br>
+<code>Ctrl</code>+<code>i</code> - vai a posizione più nuova nella lista dei salti<br>
+<code>Ctrl</code>+<code>o</code> - più vecchia<br>
+<code>:changes</code> - lista dei cambiamenti<br>
+<code>g,</code> - vai a posizione più nuova nella lista dei cambiamenti<br>
+<code>g;</code> - più vecchia</p>
+<blockquote>
+<p>per saltare a un mark possiamo usare sia <strong>`</strong> (backtick) che <strong>'</strong> (apostrofo). Con l&rsquo;apostrofo saltiamo all&rsquo;inizio (prima posizione non vuota) della riga contenente il mark</p>
+</blockquote>
+<h3 id="copia-e-incolla">Copia e incolla</h3>
+<p><code>yy</code> - copia riga<br>
+<code>2yy</code> - copia 2 righe<br>
+<code>yw</code> - copia i caratteri della parola tra il cursore e l&rsquo;inizio della prossima parola<br>
+<code>yiw</code> - copia parola sotto al cursore<br>
+<code>yaw</code> - copia parola sotto al cursore e lo spazio prima/dopo essa<br>
+<code>Y</code> - copia fino alla fine della riga<br>
+<code>p</code> - incolla dopo il cursore<br>
+<code>P</code> - incolla prima del cursore<br>
+<code>gp</code> - incolla dopo il cursore e setta il cursore dopo il nuovo testo<br>
+<code>gP</code> - incolla prima del cursore e setta il cursore dopo il nuovo testo<br>
+<code>dd</code> - elimina (taglia) riga<br>
+<code>2dd</code> - elimina (taglia) 2 righe<br>
+<code>dw</code> - elimina (taglia) i caratteri della parola tra il cursore e l&rsquo;inizio della prossima parola<br>
+<code>diw</code> - elimina (taglia) parola sotto al cursore<br>
+<code>daw</code> - elimina (taglia) parola sotto al cursore e lo spazio prima/dopo essa<br>
+<code>D</code> - elimina (taglia) fino alla fine della riga<br>
+<code>x</code> - elimina (taglia) carattere</p>
+<h3 id="trova-e-sostituisci">Trova e sostituisci</h3>
+<p><code>/pattern</code> - cerca &ldquo;pattern&rdquo;<br>
+<code>?pattern</code> - cerca &ldquo;pattern&rdquo; all&rsquo;indietro<br>
+<code>n</code> - prossima occorrenza (stessa direzione)<br>
+<code>N</code> - prossima occorrenza (direzione opposta)<br>
+<code>:%s/vecchio/nuovo/g</code> - rimpiazza tutte le occorrenze di &ldquo;vecchio&rdquo; con &ldquo;nuovo&rdquo;<br>
+<code>:%s/vecchio/nuovo/gc</code> - come sopra ma con la conferma<br>
+<code>:noh[lsearch]</code> - rimuovi gli highlight delle parole cercate</p>
+<h3 id="tabs">Tabs</h3>
+<p><code>:tabnew</code> - apri file in un nuovo tab<br>
+<code>gt</code> o <code>tabn[ext]</code> - passa a prossimo tab<br>
+<code>gT</code> o <code>tabp[revious]</code> - tab precedente<br>
+<code>#gt</code> - vai a tab numero #<br>
+<code>:tabm[ove] #</code> - muovi tab corrente a posizione numero # (indice parte da 0)<br>
+<code>:tabc[lose]</code> - chiudi tab corrente e tutte le sue finestre<br>
+<code>:tabo[nly]</code> - chiudi tutti i tab tranne quello corrente<br>
+<code>:tabdo command</code> - esegui il comando <em>command</em> in tutti i tab  (esempio <em>:tabdo q</em> -&gt; chiudi tutti i tab)</p>
+<h3 id="file-multipli">File multipli</h3>
+<p><code>:e[dit] file</code> - apri un nuovo file &ldquo;file&rdquo; (in un nuovo buffer)<br>
+<code>:bn[ext]</code> - vai al prossimo buffer<br>
+<code>:bp[revious]</code> - buffer precedente<br>
+<code>:bd[elete]</code> - elimina buffere (chiudi file)<br>
+<code>:b[uffer]#</code> - vai a buffer di indice #<br>
+<code>:b[uffer] file</code> - vai a buffer di &ldquo;file&rdquo;<br>
+<code>:ls</code> o <code>:buffers</code> - mostra buffer aperti<br>
+<code>:sp[lit] file</code> - apri nuovo file &ldquo;file&rdquo; in nuovo buffer e splitta le finestre<br>
+<code>:vs[plit] file</code> - come sopra ma splitta verticalmente<br>
+<code>:vert[ical] ba[ll]</code> - apri tutti i buffer in finestre splittate verticali<br>
+<code>:tab ba[ll]</code> - modifica i buffer come tabs</p>
 
             </div>
         </article>
