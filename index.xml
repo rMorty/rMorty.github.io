@@ -144,5 +144,23 @@ Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa oc
       <description></description>
     </item>
     
+    <item>
+      <title>SSH CheatSheet</title>
+      <link>https://example.com/cheatsheets/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terminale CheatSheet</title>
+      <link>https://example.com/cheatsheets/terminale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/terminale/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

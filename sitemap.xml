@@ -96,7 +96,15 @@
   </url>
   
   <url>
+    <loc>https://example.com/cheatsheets/ssh/</loc>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/cheatsheets/terminale/</loc>
   </url>
   
 </urlset>
