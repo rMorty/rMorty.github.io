@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://example.com/cheatsheets/</loc>
-    <lastmod>2022-10-06T12:00:00+00:00</lastmod>
+    <lastmod>2022-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/</loc>
-    <lastmod>2022-10-06T12:00:00+00:00</lastmod>
+    <lastmod>2022-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/cheatsheets/terminale/</loc>
+    <lastmod>2022-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -101,10 +106,6 @@
   
   <url>
     <loc>https://example.com/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://example.com/cheatsheets/terminale/</loc>
   </url>
   
 </urlset>

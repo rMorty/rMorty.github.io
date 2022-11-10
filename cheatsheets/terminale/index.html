@@ -5,7 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="" />
+<meta name="description" content="Processi Ctrl&#43;c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)
+Ctrl&#43;z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)
+Ctrl&#43;D - chiude la shell (invia un EOF a bash)
+Schermo Ctrl&#43;L - cancella lo schermo (simile al comando clear)
+Ctrl&#43;S - interrompe l&amp;rsquo;output sullo schermo (ma non interrompe il processo)" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -14,7 +18,7 @@
 
     <title>
         
-            Terminale CheatSheet :: QSL 
+            Shell Bash CheatSheet :: QSL 
         
     </title>
 
@@ -38,23 +42,34 @@
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Terminale CheatSheet">
-<meta itemprop="description" content="">
-
-<meta itemprop="wordCount" content="0">
+<meta itemprop="name" content="Shell Bash CheatSheet">
+<meta itemprop="description" content="Processi Ctrl&#43;c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)
+Ctrl&#43;z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)
+Ctrl&#43;D - chiude la shell (invia un EOF a bash)
+Schermo Ctrl&#43;L - cancella lo schermo (simile al comando clear)
+Ctrl&#43;S - interrompe l&rsquo;output sullo schermo (ma non interrompe il processo)">
+<meta itemprop="datePublished" content="2022-11-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-11-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="347">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Terminale CheatSheet"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Shell Bash CheatSheet"/>
+<meta name="twitter:description" content="Processi Ctrl&#43;c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)
+Ctrl&#43;z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)
+Ctrl&#43;D - chiude la shell (invia un EOF a bash)
+Schermo Ctrl&#43;L - cancella lo schermo (simile al comando clear)
+Ctrl&#43;S - interrompe l&rsquo;output sullo schermo (ma non interrompe il processo)"/>
 
 
 
 
 
 
+
+    <meta property="article:published_time" content="2022-11-09 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -123,14 +138,53 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/cheatsheets/terminale/">Terminale CheatSheet</a></h2>
+            <h2 class="post-title"><a href="/cheatsheets/terminale/">Shell Bash CheatSheet</a></h2>
 
             
             
             
 
             <div class="post-content">
-                
+                <h3 id="processi">Processi</h3>
+<p><code>Ctrl</code>+<code>c</code> - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)<br>
+<code>Ctrl</code>+<code>z</code> - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo <code>$ fg [numero_job]</code> (per ottenere il numero <code>$ jobs</code>)<br>
+<code>Ctrl</code>+<code>D</code> - chiude la shell (invia un EOF a bash)</p>
+<h3 id="schermo">Schermo</h3>
+<p><code>Ctrl</code>+<code>L</code> - cancella lo schermo (simile al comando <em>clear</em>)<br>
+<code>Ctrl</code>+<code>S</code> - interrompe l&rsquo;output sullo schermo (ma non interrompe il processo)<br>
+<code>Ctrl</code>+<code>Q</code> - ripristinare schermo dopo <em>Ctrl+s</em></p>
+<h3 id="spostamento-cursore">Spostamento cursore</h3>
+<p><code>Ctrl</code>+<code>a</code> - vai all&rsquo;inizio della riga<br>
+<code>Ctrl</code>+<code>e</code> - vai alla fine della riga<br>
+<code>Alt</code>+<code>b</code> - vai indietro di una parola<br>
+<code>Ctrl</code>+<code>b</code> - vai a sinnistra di un carattere<br>
+<code>Alt</code>+<code>f</code> - vai avanti di una parola<br>
+<code>Ctrl</code>+<code>F</code> - vai avanti di un carattere</p>
+<h3 id="eliminazione-testo">Eliminazione testo</h3>
+<p><code>Ctrl</code>+<code>d</code> - elimina carattere sotto il cursore<br>
+<code>Alt</code>+<code>d</code> - elimina tutti i caratteri dopo il cursore sulla riga corrente<br>
+<code>Ctrl</code>+<code>h</code> - elimina carattere prima del cursore</p>
+<h3 id="fixing-typos">Fixing Typos</h3>
+<p><code>Alt</code>+<code>t</code> - scambia la parola corrente con quella precedente<br>
+<code>Ctrl</code>+<code>t</code> - scambia gli ultimi due caratteri prima del cursore l&rsquo;uno con l&rsquo;altro<br>
+<code>Ctrl</code>+<code>_</code> - annulla l&rsquo;operazione precedente</p>
+<h3 id="taglia-e-incolla">Taglia e incolla</h3>
+<p><code>Ctrl</code>+<code>w</code> - taglia la parola prima del cursore e aggiungila agli appunti<br>
+<code>Ctrl</code>+<code>k</code> - taglia la parte della riga dopo il cursore e aggiungila agli appunti<br>
+<code>Ctrl</code>+<code>u</code> - taglia la parte della riga prima del cursore e aggiungila agli appunti<br>
+<code>Ctrl</code>+<code>y</code> - incolla l&rsquo;ultima cosa copiata negli appunti</p>
+<h3 id="maiuscolo">Maiuscolo</h3>
+<p><code>Alt</code>+<code>u</code> - converti in maiuscolo i caratteri della parola corrente a partire dal cursore<br>
+<code>Alt</code>+<code>l</code> - converti in minuscolo i caratteri della parola corrente a partire dal cursore<br>
+<code>Alt</code>+<code>c</code> - converti in maiuscolo il carattere sotto il cursore e sposta il cursore alla fine della parola</p>
+<h3 id="cronologia">Cronologia</h3>
+<p><code>Ctrl</code>+<code>p</code> - vai al comando precedente nella cronologia dei comandi<br>
+<code>Ctrl</code>+<code>n</code> - vai al comando successivo nella cronologia dei comandi<br>
+<code>Alt</code>+<code>r</code> - ripristina le modifiche a un comando che hai estratto dalla cronologia se lo hai modificato<br>
+<code>Ctrl</code>+<code>r</code> - richiama l&rsquo;ultimo comando corrispondente ai caratteri digitati<br>
+<code>Ctrl</code>+<code>o</code> - esegui comando trovato con <em>Ctrl+s</em><br>
+<code>Ctrl</code>+<code>g</code> - lascia la modalità di ricerca senza eseguire niente</p>
+
             </div>
         </article>
 

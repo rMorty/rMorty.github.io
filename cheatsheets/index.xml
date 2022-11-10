@@ -6,10 +6,23 @@
     <description>Recent content in Cheatsheets on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Thu, 06 Oct 2022 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shell Bash CheatSheet</title>
+      <link>https://example.com/cheatsheets/terminale/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/terminale/</guid>
+      <description>Processi Ctrl+c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)
+Ctrl+z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)
+Ctrl+D - chiude la shell (invia un EOF a bash)
+Schermo Ctrl+L - cancella lo schermo (simile al comando clear)
+Ctrl+S - interrompe l&amp;rsquo;output sullo schermo (ma non interrompe il processo)</description>
+    </item>
     
     <item>
       <title>Vim CheatSheet</title>
@@ -68,15 +81,6 @@ $ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/cheatsheets/ssh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Terminale CheatSheet</title>
-      <link>https://example.com/cheatsheets/terminale/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/cheatsheets/terminale/</guid>
       <description></description>
     </item>
     
