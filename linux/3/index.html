@@ -39,9 +39,13 @@
 
 
 <meta itemprop="name" content="[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano">
-<meta itemprop="description" content="Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&rsquo;editor di testo nano. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla."><meta itemprop="datePublished" content="2022-08-09T12:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-08-09T12:00:00+00:00" />
+<meta itemprop="description" content="Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&rsquo;editor di testo nano. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla.">
+<meta itemprop="datePublished" content="2022-08-09T12:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-08-09T12:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="199">
+
+
+
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano"/>
@@ -134,9 +138,9 @@
 <p><img src="/images/linux/3/nocolor.png" alt="No colori"><br>
 e vediamo che non ci sono colori, come se fosse un semplice file in formato <em>.txt</em>.<br>
 Apriamo un terminale ed eseguiamo</p>
-<pre tabindex="0"><code>$ ls /usr/share/nano
+<pre><code>$ ls /usr/share/nano
 </code></pre><p>e vedremo una lista di file. Individuiamo quello che fa al caso nostro (in questo caso sarà <em>python.nanorc</em>), e a questo punto modifichiamo il file di configurazione di nano:</p>
-<pre tabindex="0"><code>$ sudo nano /etc/nanorc
+<pre><code>$ sudo nano /etc/nanorc
 </code></pre><p>ed aggiungiamo la linea <code>include &quot;/usr/share/nano/python.nanorc&quot;</code> (è possibile che sia già presente ma commentata, in questo caso basta decommentarla).<br>
 Adesso i colori per python saranno attivati, possiamo aprire lo script per verificarlo:</p>
 <p><img src="/images/linux/3/color.png" alt="Colori"></p>
@@ -183,7 +187,7 @@ Adesso i colori per python saranno attivati, possiamo aprire lo script per verif
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 
