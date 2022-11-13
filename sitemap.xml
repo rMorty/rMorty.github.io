@@ -18,12 +18,12 @@
   </url>
   
   <url>
-    <loc>https://example.com/linux/6/</loc>
+    <loc>https://example.com/posts/6/</loc>
     <lastmod>2022-11-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/linux/</loc>
+    <loc>https://example.com/posts/</loc>
     <lastmod>2022-11-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/linux/5/</loc>
+    <loc>https://example.com/posts/5/</loc>
     <lastmod>2022-10-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,37 +53,37 @@
   </url>
   
   <url>
-    <loc>https://example.com/linux/3/</loc>
+    <loc>https://example.com/posts/3/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/linux/4/</loc>
+    <loc>https://example.com/posts/4/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ctf/</loc>
+    <loc>https://example.com/ctfs/</loc>
     <lastmod>2022-08-04T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ctf/0/</loc>
+    <loc>https://example.com/ctfs/0/</loc>
     <lastmod>2022-08-04T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/linux/2/</loc>
+    <loc>https://example.com/posts/2/</loc>
     <lastmod>2022-08-02T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/linux/0/</loc>
+    <loc>https://example.com/posts/0/</loc>
     <lastmod>2022-07-27T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/linux/1/</loc>
+    <loc>https://example.com/posts/1/</loc>
     <lastmod>2022-07-25T12:00:00+00:00</lastmod>
   </url>
   

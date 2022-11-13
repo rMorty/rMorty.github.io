@@ -1,0 +1,443 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on QSL</title>
+        <link>https://example.com/posts/</link>
+        <description>Recent content in Posts on QSL</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>it-IT</language>
+        <lastBuildDate>Fri, 11 Nov 2022 00:00:00 +0000</lastBuildDate>
+        <atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>[Guida] Come installare i plugin in Vim</title>
+            <link>https://example.com/posts/6/</link>
+            <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/6/</guid>
+            <description>Vim è conosciuto (e utilizzato) per la sua incredibile capacità di aumentare la nostra efficienza nelllo scrivere ed editare programmi/script, ma è importante sapere che è possibile aumentare questa capacità personalizzando la nostra configurazione di Vim con dei plugin. Nonostante esistano due metodi per installare un plugin, ovvero quello manuale e non, in questa guida vediamo solo il primo in quanto è quello che io consiglio (questo metodo è disponibile a partire dalle versioni 8.</description>
+            <content type="html"><![CDATA[<p>Vim è conosciuto (e utilizzato) per la sua incredibile capacità di aumentare la nostra efficienza nelllo scrivere ed editare programmi/script, ma è importante sapere che è possibile aumentare questa capacità personalizzando la nostra configurazione di Vim con dei plugin. Nonostante esistano due metodi per installare un plugin, ovvero quello manuale e non, in questa guida vediamo solo il primo in quanto è quello che io consiglio (questo metodo è disponibile a partire dalle versioni <em>8.x</em>; per le precedenti dovevamo affidarci ad un plugin manager).</p>
+<p>Una volta scelto il plugin da installare è sempre bene controllare le opzioni di download nella documentazione su GitHub, tuttavia la procedura di questo metodo è standard e adesso la vediamo. Tutto quello che bisogna fare non è altro che mettere il plugin in <strong>~/.vim/pack/vendor/start/nomeplugin</strong>, dove <em>nomeplugin</em> è una directory creata appositamente per questo plugin (ogni plugin deve stare in una directory separata per una più facile gestione; se volessimo cancellare un plugin basta eliminare la cartella); dopo di che esso sarà caricato automaticamente al prossimo avvio di Vim.</p>
+<h3 id="esempio-installazione-di-vim-airline">Esempio: Installazione di vim-airline</h3>
+<p>Come esempio vediamo l&rsquo;installazione di <strong>vim-airline</strong>, che è tra i miei plugin di fiducia. Prima apriamo uno script di esempio per mostrare come sia tutto predefinito:</p>
+<p><img src="/images/linux/6/no.png" alt="no_plugin"></p>
+<p>Poi iniziamo con il creare la cartella apposita:</p>
+<pre><code>$ mkdir -p ~/.vim/pack/vendor/start/vimairline
+</code></pre><p>e installiamo con</p>
+<pre><code>$ git clone https://github.com/vim-airline/vim-airline.git .vim/pack/vendor/start/vimairline/
+</code></pre><p>Adesso apriamo lo stesso file e vediamo come il plugin venga caricato correttamente</p>
+<p><img src="/images/linux/6/si.png" alt="plugin"></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash</title>
+            <link>https://example.com/posts/5/</link>
+            <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/5/</guid>
+            <description>Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</description>
+            <content type="html"><![CDATA[<h2 id="premessa---cosè-una-fork-bomb">Premessa - Cos'è una fork bomb</h2>
+<p>Possiamo immaginarci una fork bomb come un attacco di tipo <em>DoS (Denial of Service)</em> contro un sistema che utilizza la funzione <em>fork</em>. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</p>
+<h2 id="la-fork-bomb-in-bash">La Fork Bomb in Bash</h2>
+<p>Vediamo come il comando bash <code>$ :(){ :|:&amp; };:</code> sia effettivamente una fork bomb:</p>
+<ul>
+<li><strong>:()</strong> dichiara la funzione (ricorsiva) chiamata <em>:</em>, che non prevede argomenti</li>
+<li><strong>{}</strong> i comandi tra le parentesi sono il corpo della funzione</li>
+<li><strong>:|:</strong> qui c'è la ricorsione: la funzione chiama se stessa e manda (tramite pipe) l&rsquo;output ad un&rsquo;altra chiamata di se stessa</li>
+<li><strong>&amp;</strong> fa eseguire il comando precedente (il corpo della funzione) in background, così che i processi figli non vengano killati</li>
+<li><strong>;</strong> è per separare comandi multipli in bash</li>
+<li><strong>:</strong> è la chiamata alla funzione definita</li>
+</ul>
+<p>Se la distribuzione che usiamo utilizza <em>systemd</em>, questo comando anche se eseguito non porterebbe ad alcun crash. Questo perchè systemd, per ogni utente, imposta un limite alle risorse utilizzabili (numero di processi, cicli di CPU, utilizzo della RAM).</p>
+<h3 id="extra---proteggersi-da-una-fork-bomb">Extra - Proteggersi da una fork bomb</h3>
+<p>Supponiamo di essere su un sistema senza protezione &ldquo;nativa&rdquo; della fork bomb e vediamo come potremmo rimediare. Esiste il comando <strong>ulimit</strong> per controllare (opzione <em>-u</em>) il numero massimo di processi utilizzabili da un utente. Una volta scelto il nuovo numero (ovviamente, minore del precedente) da assegnare, dovremo modificare il file <em>/etc/security/limits.conf</em> e aggiungere la seguente linea:</p>
+<pre><code># Per tutti gli utenti del gruppo wheel
+@wheel  hard nproc  [numero_processi]
+
+# Solo per l'utente qsl
+qsl  hard nproc  [numero_processi]
+</code></pre>]]></content>
+        </item>
+        
+        <item>
+            <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
+            <link>https://example.com/posts/3/</link>
+            <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/3/</guid>
+            <description>Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&amp;rsquo;editor di testo nano. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla.</description>
+            <content type="html"><![CDATA[<p>Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&rsquo;editor di testo <em>nano</em>. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla.</p>
+<p>Scriviamo un semplice script in python che stampa &ldquo;<em>Hello World!</em>&rdquo; se passiamo qualsiasi cosa come argomento nella shell quando lo invochiamo:</p>
+<p><img src="/images/linux/3/nocolor.png" alt="No colori"><br>
+e vediamo che non ci sono colori, come se fosse un semplice file in formato <em>.txt</em>.<br>
+Apriamo un terminale ed eseguiamo</p>
+<pre><code>$ ls /usr/share/nano
+</code></pre><p>e vedremo una lista di file. Individuiamo quello che fa al caso nostro (in questo caso sarà <em>python.nanorc</em>), e a questo punto modifichiamo il file di configurazione di nano:</p>
+<pre><code>$ sudo nano /etc/nanorc
+</code></pre><p>ed aggiungiamo la linea <code>include &quot;/usr/share/nano/python.nanorc&quot;</code> (è possibile che sia già presente ma commentata, in questo caso basta decommentarla).<br>
+Adesso i colori per python saranno attivati, possiamo aprire lo script per verificarlo:</p>
+<p><img src="/images/linux/3/color.png" alt="Colori"></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>[Guida] Come personalizzare il prompt della shell Bash</title>
+            <link>https://example.com/posts/4/</link>
+            <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/4/</guid>
+            <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
+            <content type="html"><![CDATA[<p>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema).
+Innanzitutto c'è da sapere che la configurazione viene salvata in una variabile di ambiente <strong>PS1</strong>: quindi, per controllare quella attuale, diamo da terminale</p>
+<pre><code>$ echo $PS1
+</code></pre><p>È probabile che di default la variabile sia settata a <code>[\u@\h \W]\$</code> o qualcosa di simile, e in particolare ecco il significato dei singoli componenti:</p>
+<ul>
+<li><strong>\u</strong> mostra l&rsquo;username corrente</li>
+<li><strong>\h</strong> hostname</li>
+<li><strong>\W</strong> directory corrente</li>
+<li><strong>\S</strong> mostra <em>#</em> se siamo root, oppure <em>$</em></li>
+</ul>
+<p>Per personalizzare il prompt dobbiamo quindi modificare questa variabile aggiungendo oppure togliendo i componenti relativi alle informazioni che vogliamo vedere. Supponiamo per esempio di volerlo modificare rispetto al precedente, affinchè tra le parentesi venga mostrato solo l&rsquo;username: in questo caso possiamo digitare da terminale</p>
+<pre><code>$ export PS1=&quot;[\u]\$&quot;
+</code></pre><p>Finchè questo comando viene eseguito così da terminale, gli effetti saranno relativi soltanto alla sessione in corso; se vogliamo renderli definitivi dobbiamo invece aggiungerlo al file <code>~/.bash_profile</code> oppure <code>~/.bashrc</code>.<br>
+Per intervenire sui colori invece la sintassi sarà del tipo <code>\e[x;ym$PS1 \e[m</code>, dove:</p>
+<ul>
+<li><strong>\e[</strong> indica che inizia lo schema dei colori</li>
+<li><strong>x;y</strong> è il codice relativo al colore</li>
+<li><strong>\e[m</strong> segnala la fine dello schema dei colori</li>
+</ul>
+<p>In particolare, ecco la lista dei codici dei colori (se vogliamo che il colore sia acceso basta rimpiazzare lo 0 con 1):</p>
+<table>
+<thead>
+<tr>
+<th>Colore</th>
+<th>Codice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nero</td>
+<td>0;30</td>
+</tr>
+<tr>
+<td>Rosso</td>
+<td>0;31</td>
+</tr>
+<tr>
+<td>Verde</td>
+<td>0;32</td>
+</tr>
+<tr>
+<td>Marrone</td>
+<td>0;33</td>
+</tr>
+<tr>
+<td>Blu</td>
+<td>0;34</td>
+</tr>
+<tr>
+<td>Viola</td>
+<td>0;35</td>
+</tr>
+<tr>
+<td>Ciano</td>
+<td>0;36</td>
+</tr>
+</tbody>
+</table>
+<p>Riprendiamo il comando precedente, stavolta però vogliamo che il prompt venga mostrato con una colorazione verde: in questo caso daremo</p>
+<pre><code>$ export PS1=&quot;\e[0;32m[\u]\$ \e[m&quot;
+</code></pre>]]></content>
+        </item>
+        
+        <item>
+            <title>[Guida] Come creare un&#39;immagine Docker personalizzata</title>
+            <link>https://example.com/posts/2/</link>
+            <pubDate>Tue, 02 Aug 2022 12:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/2/</guid>
+            <description>La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&amp;rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&amp;rsquo;immagine generale e configurarla.</description>
+            <content type="html"><![CDATA[<p>La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&rsquo;immagine generale e configurarla.</p>
+<blockquote>
+<p><strong>N.B.</strong> Per semplicità in questa guida le modifiche consisteranno in una semplice creazione di un file di testo</p>
+</blockquote>
+<h3 id="passo-1---pull-dellimmagine">Passo 1 - Pull dell&rsquo;immagine</h3>
+<pre><code>$ docker pull ubuntu
+</code></pre><p>Quindi ora guardando le immagini presenti nel nostro sistema dovremmo ottenere qualcosa simile a questo:</p>
+<pre><code>$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED      SIZE
+ubuntu                   latest    df5de72bdb3b   4 days ago   77.8MB
+</code></pre><h3 id="passo-2---crezione-e-modifica-del-container">Passo 2 - Crezione e modifica del container</h3>
+<pre><code>$ docker run -it --name ubuntu df5de72bdb3b /bin/bash
+</code></pre><p>Con questo comando verrà creato il container e avviato automaticamente. Per quanto riguarda i parametri passati:</p>
+<ul>
+<li><em>-it</em> è per poter interagire con il container tramite riga di comando</li>
+<li><em>&ndash;name ubuntu</em> imposta il nome del container a <em>ubuntu</em></li>
+<li><em>/bin/bash</em> è il comando da eseguire<br>
+(Ovviamente per quanto riguarda nome e shell scegliete quelli che preferite)</li>
+</ul>
+<p>Adesso che siamo dentro al container passiamo alle modifiche: spostiamoci nella home e creiamo il file <em>modifiche.txt</em>, e dopo possiamo uscire dal container:</p>
+<pre><code>$ cd home/
+$ echo &quot;container modificato&quot; &gt; modifiche.txt
+$ exit
+</code></pre><h3 id="passo-3---creazione-dellimmagine-dal-container">Passo 3 - Creazione dell&rsquo;immagine dal container</h3>
+<p>Per prima cosa controlliamo la lista dei container nel nostro sistema:</p>
+<pre><code>$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED        STATUS                       PORTS     NAMES
+64814f19d3f6   df5de72bdb3b   &quot;/bin/bash&quot;   21 hours ago   Exited (127) 4 minutes ago             ubuntu
+</code></pre><p>Ora usiamo il comando <strong>docker commit</strong> per salvare il container come immagine:</p>
+<pre><code>$ docker commit ubuntu
+</code></pre><p>Controlliamo la lista delle immagini e dovremmo vedere una nuova immagine (con REPOSITORY e TAG non impostati), che è proprio quella appena creata:</p>
+<pre><code>$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED          SIZE
+&lt;none&gt;                   &lt;none&gt;    cebba0f4fdab   16 seconds ago   77.8MB
+ubuntu                   latest    df5de72bdb3b   5 days ago       77.8MB
+</code></pre><h3 id="passo-4---tag-dellimmagine">Passo 4 - Tag dell&rsquo;immagine</h3>
+<p>Qui usiamo il comando <strong>docker tag</strong> (ci serve l&rsquo;ID dell&rsquo;immagine, che possiamo prendere dall&rsquo;output del comando precedente):</p>
+<pre><code>$ docker tag cebba0f4fdab ubuntu_mod
+$ docker images
+REPOSITORY               TAG       IMAGE ID       CREATED         SIZE
+ubuntu_mod               latest    cebba0f4fdab   6 minutes ago   77.8MB
+ubuntu                   latest    df5de72bdb3b   5 days ago      77.8MB
+</code></pre><p>Adesso proviamo subito a creare un container basato sull&rsquo;immagine che abbiamo taggato. Prima eliminiamo quello da cui siamo partiti:</p>
+<pre><code>$ docker rm ubuntu
+</code></pre><p>e poi avviamo quello nuovo:</p>
+<pre><code>$ docker run -it --name ubuntu_mod cebba0f4fdab /bin/bash
+</code></pre><p>Ora che siamo dentro al container, possiamo verificare che tutto sia andato a buon fine spostandoci nella home e controllando che il file che avevamo creato sia effettivamente presente.</p>
+<h3 id="passo-5---push-dellimmagine-nella-docker-hub">Passo 5 - Push dell&rsquo;immagine nella Docker Hub</h3>
+<p>Se vogliamo usare l&rsquo;immagine creata su altri dispositivi, possiamo caricarla in un repository nella Docker Hub (in questo modo poi potremo fare il pull ogni volta che vogliamo, in qualsiasi sistema che abbia Docker installato).</p>
+<ol>
+<li>Facciamo il login su <a href="https://hub.docker.com/">https://hub.docker.com/</a></li>
+<li>Clicchiamo su <em>Create Repository</em> e impostiamo il nome e la descrizione (in questo caso per il nome ho scelto <em>ubuntu_mod</em>)</li>
+<li>Facciamo il login da terminale con</li>
+</ol>
+<pre><code>$ docker login -u [HubUsername]
+</code></pre><p>ci verrà chiesta la password: inseriamola e, se tutto va bene, verrà restituito un messaggio che termina con <code>Login Succeeded</code>.<br>
+Adesso tagghiamo l&rsquo;immagine per poter fare il push nel repository creato:</p>
+<pre><code>$ docker tag cebba0f4fdab [HubUsername]/ubuntu_mod:[tag]
+# se non specifichiamo tag verrà usato quello di default &quot;latest&quot;
+</code></pre><p>e finalmente facciamo il push nel repository:</p>
+<pre><code>$ docker push [HubUsername]/ubuntu_mod
+</code></pre><p>Ora l&rsquo;immagine sarà caricata e chiunque la potrà usare: basterà infatti visitare la pagina del repository e ci sarà il comando da eseguire per scaricarla, che in questo caso sarà:</p>
+<pre><code>$ docker pull [HubUsername]/ubuntu_mod:[tag]
+# anche qui se omettiamo tag verrà usato &quot;latest&quot;
+</code></pre><blockquote>
+<p><strong>N.B.</strong> Possiamo anche decidere di non rendere pubblico il repository e impostarlo come privato direttamente dalla Docker Hub (con l&rsquo;account base però abbiamo a disposizione soltanto un repo privato)</p>
+</blockquote>
+]]></content>
+        </item>
+        
+        <item>
+            <title>[Guida] Come installare Arch Linux</title>
+            <link>https://example.com/posts/0/</link>
+            <pubDate>Wed, 27 Jul 2022 12:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/0/</guid>
+            <description>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa essere utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.
+Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&amp;rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</description>
+            <content type="html"><![CDATA[<p>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa essere utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.</p>
+<h1 id="parte-1-installazione">Parte 1: Installazione</h1>
+<h3 id="passo-1---avviare-linstaller">Passo 1 - Avviare l&rsquo;installer</h3>
+<p>Per prima cosa occorre una chiavetta USB configurata per l&rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</p>
+<p><img src="/images/linux/0/schermata_iniziale.png" alt="Schermata iniziale"><br>
+A questo punto potremo partire con il processo di installazione (a differenza di altre distro Linux, arch non ha un installer grafico e si fa tutto da terminale).</p>
+<h3 id="passo-2---impostare-il-layout-della-tastiera">Passo 2 - Impostare il layout della tastiera</h3>
+<p>Di default viene caricato quello americano, ma possiamo cambiarlo guardando quelli disponibili in <em>/usr/share/kbd/keymap</em> e poi impostandolo con il comando <strong>loadkeys</strong>. Per impostarlo a quello italiano digiteremo</p>
+<pre><code>$ loadkeys it
+</code></pre><p>(Potremmo anche cambiare font con procedimento analogo: <em>/usr/share/kbd/consolefonts</em> + comando <strong>setfont</strong>, ma credo che non sia poi così necessario per il processo di installazione).</p>
+<h3 id="passo-3---verificare-la-modalità-di-boot">Passo 3 - Verificare la modalità di boot</h3>
+<p>Assicuriamoci di aver avviato il sistema in modalità UEFI. Digitiamo</p>
+<pre><code>$ ls /sys/firmware/efi/efivars
+</code></pre><p>e se viene restituito un elenco di file senza errori va tutto bene; altrimenti la cartella non esisterebbe nemmeno.</p>
+<h3 id="passo-4---connettersi-a-internet">Passo 4 - Connettersi a Internet</h3>
+<p>In caso di rete cablata ovviamente dovremmo essere già connessi (verificare per esempio con <code>$ ping google.com</code>), per le reti wireless invece dobbiamo connetterci usando il comando <strong>iwctl</strong>. Iniziamo dando</p>
+<pre><code>$ iwctl
+</code></pre><p>questo aprirà un prompt interattivo in cui scriveremo i prossimi comandi:</p>
+<pre><code># per vedere il nome della scheda di rete
+device list
+
+# per vedere le reti disponibili
+station wlan0 scan
+station wlan0 get-networks
+
+# colleghiamoci alla wifi
+station wlan0 connect [nome_rete]
+
+# ora possiamo uscire
+exit
+</code></pre><p>Prima di proseguire verifichiamo di essere effettivamente connessi facendo un ping.</p>
+<h3 id="passo-5---aggiornare-lorologio-di-sistema">Passo 5 - Aggiornare l&rsquo;orologio di sistema</h3>
+<p>In Linux possiamo usare <strong>NTP</strong> (Network Time Protocol) per sincronizzare l&rsquo;ora attraverso la rete, digitiamo quindi</p>
+<pre><code>$ timedatectl set-ntp true
+</code></pre><h3 id="passo-6---partizionare-il-disco">Passo 6 - Partizionare il disco</h3>
+<p>Questo è sicuramente il momento più delicato: il consiglio è sempre quello di fare un backup dei dati importanti che abbiamo sul disco ed essere sicuri delle partizioni che andremo a modificare (soprattutto in caso di installazione destinata a un dual boot accanto a un altro OS).<br>
+Prima di iniziare il processo di partizionamento usiamo <strong>fdisk</strong> per vedere a quale file è stato assegnato il disco su cui effettueremo l&rsquo;installazione dando</p>
+<pre><code>$ fdisk -l
+</code></pre><p>Questo comando potrebbe dare in output più di un risultato, ma possiamo ignorare quelli che terminano con <em>loop</em>, <em>rom</em> e <em>airoot</em>. Assumendo che il disco che ci interessa sia <em>/dev/sda</em> (potrebbe avere un nome diverso, tipo <em>/dev/nvme0n1</em> in caso di disco NVME), a questo punto possiamo avviare <strong>cfdisk</strong> (un tool di partizionamento utilizzabile da terminale, che però possiede un&rsquo;interfaccia interattiva) dando</p>
+<pre><code>$ cfdisk /dev/sda
+</code></pre><p>Nel caso in cui ci chieda di scegliere il tipo di tabella delle partizioni, selezioniamo <em>gpt</em> perchè siamo in modalità UEFI, dopo di che ci troveremo davanti all&rsquo;interfaccia del programma:</p>
+<p><img src="/images/linux/0/cfdisk.png" alt="cfdisk"><br>
+Per poter installare Arch abbiamo bisogno di 3 partizioni:</p>
+<ul>
+<li>EFI: per i file richiesti dal firmware UEFI</li>
+<li>ROOT: per installare il sistema vero e proprio</li>
+<li>SWAP (facoltativa): da &ldquo;estensione&rdquo; per la RAM</li>
+</ul>
+<p>Assicuriamoci di essere sulla partizione giusta. In questo caso, trattandosi di un&rsquo;installazione su una macchina virtuale VirtualBox, ho un&rsquo;unica partizione di spazio libero e non devo scegliere. E simile sarebbe se vogliamo dedicare ad Arch l&rsquo;intero disco: in questo caso basterebbe eliminare tutte le partizioni con <em>Delete</em>, fino ad ottenrne una unica.<br>
+Premiamo <em>New</em> e inseriamo la dimensione che vogliamo (che consiste nel numero seguito da una lettera: M per megabytes, G per gigabytes e T per terabytes). La prima che creiamo sarà quella EFI (in caso di installazione accanto a Windows questa partizione dovrebbe essere già presente: lasciamola e creiamo le altre) e sono sufficienti 500M; dopo aver confermato dovremmo avere una situazione del genere:</p>
+<p><img src="/images/linux/0/cfdisk_efi0.png" alt="cfdisk efi"><br>
+ed ora bisogna specificare il tipo di partizione, perciò premiamo <em>Type</em> e dalla lista che esce selezioniamo <em>EFI System</em>.<br>
+Con lo spazio rimanente ripetiamo il procedimento due volte per creare prima la partizione di root (la cui dimensione è a nostra discrezione, e il tipo è quello predefinito <em>Linux filesystem</em>) e poi quella di swap (anche qui per la dimensione non c'è una regola precisa, potete cercare qualche consiglio online; mentre il tipo è <em>Linux swap</em>). Alla fine il risultato dovrebbe essere simile a questo:</p>
+<p><img src="/images/linux/0/cfdisk_fine.png" alt="cfdisk fine"><br>
+Se siamo sicuri, clicchiamo su <em>Write</em>, digitiamo <em>yes</em> e infine selezioniamo <em>Quit</em>.</p>
+<h3 id="passo-7---formattare-le-partizioni">Passo 7 - Formattare le partizioni</h3>
+<p>Qui useremo i programmi <strong>mkfs</strong> e <strong>mkswap</strong>. Prima di procedere però diamo uno sguardo finale alla nostra lista delle partizioni con</p>
+<pre><code>$ fdisk -l /dev/sda
+</code></pre><p><img src="/images/linux/0/lista_partizioni.png" alt="lista partizioni"><br>
+La partizione EFI (questo caso <em>/dev/sda1</em>) deve essere formattata come FAT32, quindi diamo</p>
+<pre><code>$ mkfs.fat -F32 /dev/sda1
+</code></pre><p>Quella di root invece come <em>EXT4</em>, quindi</p>
+<pre><code>$ mkfs.ext4 /dev/sda2
+</code></pre><p>Infine, per formattare quella di swap</p>
+<pre><code>$ mkswap /dev/sda3
+</code></pre><h3 id="passo-8---montare-il-file-system">Passo 8 - Montare il file system</h3>
+<p>Usiamo il comando <strong>mount</strong> per montare il volume di root in <em>/mnt</em>:</p>
+<pre><code>$ mount /dev/sda2 /mnt
+</code></pre><p>Per la swap invece dobbiamo usare il comando <strong>swapon</strong>:</p>
+<pre><code>$ swapon /dev/sda3
+</code></pre><p>Della partizione EFI ce ne occuperemo dopo.</p>
+<h3 id="passo-9---configurare-i-mirrors">Passo 9 - Configurare i mirrors</h3>
+<p>Su Arch i pacchetti da installare vengono scaricati da dei server mirror definiti in una lista nel file <em>/etc/pacman.d/mirrorlist</em>. Nel sistema live di Arch possiamo usare lo script <strong>reflector</strong> per aggiornare la lista. Lanciamo prima lo script da solo per assicurarci che funzioni</p>
+<pre><code>$ reflector
+</code></pre><p>L&rsquo;output sarà simile al seguente:</p>
+<p><img src="/images/linux/0/reflector.png" alt="reflector"><br>
+Se tutto va bene, facciamo una copia preventiva della lista attuale con</p>
+<pre><code>$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+</code></pre><p>e poi sovrascriviamola:</p>
+<pre><code>$ reflector --country Italy,Germany,France --protocol https --sort rate --age 12 --save /etc/pacman.d/mirrorlist  
+# per la comprensione di tutti i parametri basta guardare l'help di reflector
+</code></pre><p>Se mentre lo script è in esecuzione viene stampato qualche errore non preoccupiamoci, nella lista andranno solo i mirror funzionanti (e in ogni caso alla fine possiamo vedere che sia tutto apposto con <code>$ cat /etc/pacman.d/mirrorlist</code>).</p>
+<h3 id="passo-10---installare-i-programmi-essenziali">Passo 10 - Installare i programmi essenziali</h3>
+<p>Prima di procedere aggiorniamo la cache dei pacchetti del sistema con i nuovi mirror dando</p>
+<pre><code>$ pacman -Sy
+</code></pre><p>Adesso usiamo lo script <strong>pacstrap</strong> per installare i programmi, che passiamo come argomento, nella partizione di root (che abbiamo montato in <em>/mnt</em>):</p>
+<pre><code>$ pacstrap /mnt base base-devel linux linux-firmware sudo nano man-db ntfs-3g networkmanager
+</code></pre><ul>
+<li><strong>base</strong> - necessario per un&rsquo;installazione minima di Arch</li>
+<li><strong>base-devel</strong> - per compilare e linkare i sorgenti</li>
+<li><strong>linux</strong> - il kernel</li>
+<li><strong>linux-firmware</strong> - firmware files per Linux</li>
+<li><strong>sudo</strong> - per eseguire i comandi con i massimi privilegi</li>
+<li><strong>nano</strong> - un editor di testo (io ho scelto questo ma sostituitelo pure con il vostro preferito)</li>
+<li><strong>man-db</strong> - per accedere ai manuali dei programmi</li>
+<li><strong>ntfs-3g</strong> - per poter lavorare con dischi NTFS</li>
+<li><strong>networkmanager</strong> - per connettersi automaticamente alle reti</li>
+</ul>
+<p>A questo punto, se <em>pacstrap</em> termina senza errori, Arch sarà finalmente installato. Quello che ci spetta adesso è passare alla configurazione del sistema.</p>
+<h1 id="parte-2-configurazione">Parte 2: Configurazione</h1>
+<h3 id="passo-1---generare-il-file-fstab">Passo 1 - Generare il file Fstab</h3>
+<p>Questo file serve per definire il modo in cui le partizioni devono essere montate nel file system. Generiamolo con</p>
+<pre><code>$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre><h3 id="passo-2---cambiare-la-radice">Passo 2 - Cambiare la radice</h3>
+<p>Usiamo lo script <strong>arch-chroot</strong> per fare il login nel nostro nuovo sistema che abbiamo appena installato, senza dover fare il reboot:</p>
+<pre><code>$ arch-chroot /mnt
+</code></pre><h3 id="passo-3---fuso-orario">Passo 3 - Fuso orario</h3>
+<p>La lista delle località principali la troviamo sotto <em>/usr/share/zoneinfo</em>. Nel nostro caso, se vogliamo impostare l&rsquo;ora italiana, diamo</p>
+<pre><code>$ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+</code></pre><h3 id="passo-4---localizzazione">Passo 4 - Localizzazione</h3>
+<p>Ora configuriamo la lingua di sistema. Apriamo il file <em>/etc/locale.gen</em> con</p>
+<pre><code>$ nano /etc/locale.gen
+</code></pre><p>e decommentiamo <code>#it_IT.UTF-8 UTF-8</code>; dopo generiamo le localizzazioni con</p>
+<pre><code>$ locale-gen
+</code></pre><p>Ora creiamo il file <em>/etc/locale.conf</em> e impostiamo la variabile <em>LANG</em>: diamo quindi</p>
+<pre><code>$ nano /etc/locale.conf
+</code></pre><p>e scriviamoci <code>LANG=it_IT.UTF-8</code>. Inoltre, se all&rsquo;inizio avevamo cambiato il layout della tastiera, rendiamo questa modifica persistente modificando il file <em>/etc/vcosnole.conf</em>:</p>
+<pre><code>$ nano /etc/vconsole.conf
+</code></pre><p>e inseriamo <code>KEYMAP=it</code>.<br>
+(Ovviamente in caso di lingua diversa il procedimento resterebbe invariato, l&rsquo;unica differenza sarebbero le variabili. Possiamo anche abilitare più lingue decommentando quelle che ci interessano in <em>/etc/locale.gen</em>, e poi stabilire quale usare di default scrivendola in <em>/etc/locale.conf</em>).</p>
+<h3 id="passo-5---configurazione-della-rete">Passo 5 - Configurazione della rete</h3>
+<p>Per prima cosa impostiamo l&rsquo;hostname della macchina scrivendolo dentro al file <em>/etc/hostname</em>, come nome potete usare quello che volete (io generalmente uso il nome del modello del computer, in questo caso quindi essendo su un laptop Acer Swift ci scriverò <code>swift</code>).<br>
+Ora modifichiamo il file <em>/etc/hosts</em> e inseriamo le seguenti righe:</p>
+<pre><code>127.0.0.1   localhost
+::1         localhost
+127.0.0.1   swift
+</code></pre><p>E infine abilitiamo il servizio <em>networkmanager</em>, che abbiamo già installato, in modo tale che venga caricato automaticamente all&rsquo;avvio del sistema:</p>
+<pre><code>$ systemctl enable NetworkManager
+</code></pre><h3 id="passo-6---impostare-la-password-di-root">Passo 6 - Impostare la password di root</h3>
+<p>Digitiamo prima</p>
+<pre><code>$ passwd
+</code></pre><p>e poi inseriamo la password che vogliamo.<br>
+(Lanciato così senza parametri, il comando ci fa cambiare la password per l&rsquo;utente corrente, che ora è proprio l&rsquo;utente root).</p>
+<h3 id="passo-7---creare-un-utente-non-root">Passo 7 - Creare un utente non root</h3>
+<p>Ovviamente è fondamentale usare il nostro sistema come utente senza massimi privilegi, tranne che nei casi in cui non siano necessari. Diamo dunque</p>
+<pre><code>$ useradd -m -G wheel qsl
+</code></pre><p>l&rsquo;opzione <em>-m</em> serve per creare la directory home dell&rsquo;utente, il <em>-G wheel</em> per aggiungere l&rsquo;utente al gruppo wheel (gruppo di amministrazione di Arch), e infine <em>qsl</em> è il nome scelto in questo caso per l&rsquo;utente (voi sostituitelo con quello che volete).<br>
+Approfittiamo per impostare la password del nuovo utente con</p>
+<pre><code>$ passwd qsl
+</code></pre><p>Poi abilitiamo anche i privilegi di <em>sudo</em>: apriamo il file /etc/sudoers e troviamo e decommentiamo la stringa <code># %wheel ALL=(ALL) ALL</code>.</p>
+<h3 id="passo-8---installare-microcode">Passo 8 - Installare Microcode</h3>
+<p>I produttori di processori come AMD e Intel rilasciano spesso aggiornamenti di sicurezza e stabilità per i processori, che sono importanti per la sicurezza stessa del nostro sistema; per poter ricevere questi aggiornamenti dobbiamo installare il relativo pacchetto:</p>
+<pre><code># per processori AMD
+$ pacman -S amd-ucode
+
+# per processori Intel
+$ pacman -S intel-ucode
+</code></pre><h3 id="passo-9---installare-e-configurare-il-bootloader">Passo 9 - Installare e configurare il bootloader</h3>
+<p>Per installare il bootloader <strong>GRUB</strong> (non è l&rsquo;unico possibile, ma è sicuramente il più usato) prima abbiamo bisogno di questi due pacchetti:</p>
+<pre><code>$ pacman -S grub efibootmgr
+</code></pre><blockquote>
+<p>In caso di installazione accanto ad un altro OS dovremo installare anche il pacchetto <strong>os-prober</strong></p>
+</blockquote>
+<p>Ora dobbiamo montare la partizione EFI:</p>
+<pre><code>$ mkdir /boot/efi
+$ mount /dev/sda1 /boot/efi
+</code></pre><p>A questo punto possiamo installare il bootloader nella partizione appena montata:</p>
+<pre><code>$ grub-install --removable --target=x86_64-efi --bootloader-id=grub
+</code></pre><blockquote>
+<p>Se siamo nel caso di dual boot dobbiamo fare un ulteriore passaggio prima di continuare, ovvero abilitare <em>os-prober</em> prima di creare il file di configurazione: apriamo il file <em>/etc/default/grub</em> e decommentiamo la riga<code>#GRUB_DISABLE_OS_PROBER=false</code> (dovrebbe essere l&rsquo;ultima riga del file)</p>
+</blockquote>
+<p>Ora Generiamo il file di configurazione:</p>
+<pre><code>$ grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><h3 id="passo-10---installare-xorg">Passo 10 - Installare Xorg</h3>
+<p><strong>Xorg</strong> è necessario per poter eseguire i programmi che hanno un&rsquo;interfaccia grafica; installiamolo con:</p>
+<pre><code>$ pacman -S xorg-server
+</code></pre><h3 id="passo-11---installare-i-driver-per-la-grafica">Passo 11 - Installare i driver per la grafica</h3>
+<p>Qui dobbiamo solo installare il giusto pacchetto in base alla nostra scheda grafica:</p>
+<pre><code># per schede grafiche Nvidia
+pacman -S nvidia nvidia-utils
+
+# per schede grafiche AMD dedicate e integrate
+pacman -S xf86-video-amdgpu
+
+# per schede grafiche Intel integrate
+pacman -S xf86-video-intel
+</code></pre><h3 id="passo-12---installare-un-desktop-environment">Passo 12 - Installare un Desktop Environment</h3>
+<p>Per i DE la scelta è molto ampia; io per semplicità riporto solo il caso di installazione di <strong>GNOME</strong>. Iniziamo con:</p>
+<pre><code>$ pacman -S gnome
+</code></pre><p>(Durante l&rsquo;installazione ci verrà chiesta una scelta per diversi pacchetti: possiamo premere Invio per accettare quelli di default).<br>
+Adesso abilitiamo <strong>GDM</strong> (Gnome Display Manager):</p>
+<pre><code>$ systemctl enable gdm
+</code></pre><h3 id="passo-13---terminare-linstallazione">Passo 13 - Terminare l&rsquo;installazione</h3>
+<p>A questo punto finalmente l&rsquo;intero processo è terminato e possiamo goderci il nostro nuovo sistema. Per prima cosa usciamo da <em>arch-chroot</em>:</p>
+<pre><code>$ exit
+</code></pre><p>Poi smontiamo la partizione root:</p>
+<pre><code>$ umount -R /mnt
+</code></pre><p>e spegniamo il sistema:</p>
+<pre><code>$ poweroff
+</code></pre><p>Ora possiamo rimuovere la chiavetta USB e avviare il pc; dal menu di GRUB che ci apparirà selezioniamo <em>Arch Linux</em> e dovrebbe comparire la schermata di login di GNOME (o qualsiasi altro DE abbiate scelto): inseriamo le nostre credenziali e&hellip; siamo dentro!<br>
+La prossima volta che installeremo una distro Linux con installer grafico sarà come dare un <em>pacman -Syu</em>.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Giocare con il terminale</title>
+            <link>https://example.com/posts/1/</link>
+            <pubDate>Mon, 25 Jul 2022 12:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/1/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+    </channel>
+</rss>

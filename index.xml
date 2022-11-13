@@ -26,10 +26,10 @@ Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal f
     
     <item>
       <title>[Guida] Come installare i plugin in Vim</title>
-      <link>https://example.com/linux/6/</link>
+      <link>https://example.com/posts/6/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/6/</guid>
+      <guid>https://example.com/posts/6/</guid>
       <description>Vim è conosciuto (e utilizzato) per la sua incredibile capacità di aumentare la nostra efficienza nelllo scrivere ed editare programmi/script, ma è importante sapere che è possibile aumentare questa capacità personalizzando la nostra configurazione di Vim con dei plugin. Nonostante esistano due metodi per installare un plugin, ovvero quello manuale e non, in questa guida vediamo solo il primo in quanto è quello che io consiglio (questo metodo è disponibile a partire dalle versioni 8.</description>
     </item>
     
@@ -65,10 +65,10 @@ Salvare e Uscire :w - salva, ma non uscire
     
     <item>
       <title>Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash</title>
-      <link>https://example.com/linux/5/</link>
+      <link>https://example.com/posts/5/</link>
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/5/</guid>
+      <guid>https://example.com/posts/5/</guid>
       <description>Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</description>
     </item>
     
@@ -99,56 +99,56 @@ $ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
     
     <item>
       <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
-      <link>https://example.com/linux/3/</link>
+      <link>https://example.com/posts/3/</link>
       <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/3/</guid>
+      <guid>https://example.com/posts/3/</guid>
       <description>Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&amp;rsquo;editor di testo nano. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla.</description>
     </item>
     
     <item>
       <title>[Guida] Come personalizzare il prompt della shell Bash</title>
-      <link>https://example.com/linux/4/</link>
+      <link>https://example.com/posts/4/</link>
       <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/4/</guid>
+      <guid>https://example.com/posts/4/</guid>
       <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
     </item>
     
     <item>
       <title>PicoCTF - Forensics</title>
-      <link>https://example.com/ctf/0/</link>
+      <link>https://example.com/ctfs/0/</link>
       <pubDate>Thu, 04 Aug 2022 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/ctf/0/</guid>
+      <guid>https://example.com/ctfs/0/</guid>
       <description>Wireshark doo dooo do doo&amp;hellip; Apriamo con Wireshark il file scaricato e vediamo che ci sono pacchetti TCP e HTTP. Clicchiamo per esempio sul primo pacchetto TCP, poi dal menu di Wireshark Analyze-&amp;gt;Follow-&amp;gt;TCP STream e analizziamo il traffico TCP. Nello stream 5 troviamo una stringa avente formato simile alle flags di picoCTF, ma sicuramente deve essere stata cifrata con qualche algoritmo. Possiamo usare un cipher identifier online: incolliamo la stringa e scopriamo che è stata cifrata con ROT13, decifriamola e otteniamo la bandiera della CTF.</description>
     </item>
     
     <item>
       <title>[Guida] Come creare un&#39;immagine Docker personalizzata</title>
-      <link>https://example.com/linux/2/</link>
+      <link>https://example.com/posts/2/</link>
       <pubDate>Tue, 02 Aug 2022 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/2/</guid>
+      <guid>https://example.com/posts/2/</guid>
       <description>La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&amp;rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&amp;rsquo;immagine generale e configurarla.</description>
     </item>
     
     <item>
       <title>[Guida] Come installare Arch Linux</title>
-      <link>https://example.com/linux/0/</link>
+      <link>https://example.com/posts/0/</link>
       <pubDate>Wed, 27 Jul 2022 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/0/</guid>
+      <guid>https://example.com/posts/0/</guid>
       <description>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa essere utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.
 Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&amp;rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</description>
     </item>
     
     <item>
       <title>Giocare con il terminale</title>
-      <link>https://example.com/linux/1/</link>
+      <link>https://example.com/posts/1/</link>
       <pubDate>Mon, 25 Jul 2022 12:00:00 +0000</pubDate>
       
-      <guid>https://example.com/linux/1/</guid>
+      <guid>https://example.com/posts/1/</guid>
       <description></description>
     </item>
     

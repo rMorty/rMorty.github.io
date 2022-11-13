@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ctfs on QSL</title>
+    <link>https://example.com/ctfs/</link>
+    <description>Recent content in Ctfs on QSL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it-IT</language>
+    <lastBuildDate>Thu, 04 Aug 2022 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/ctfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PicoCTF - Forensics</title>
+      <link>https://example.com/ctfs/0/</link>
+      <pubDate>Thu, 04 Aug 2022 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/ctfs/0/</guid>
+      <description>Wireshark doo dooo do doo&amp;hellip; Apriamo con Wireshark il file scaricato e vediamo che ci sono pacchetti TCP e HTTP. Clicchiamo per esempio sul primo pacchetto TCP, poi dal menu di Wireshark Analyze-&amp;gt;Follow-&amp;gt;TCP STream e analizziamo il traffico TCP. Nello stream 5 troviamo una stringa avente formato simile alle flags di picoCTF, ma sicuramente deve essere stata cifrata con qualche algoritmo. Possiamo usare un cipher identifier online: incolliamo la stringa e scopriamo che è stata cifrata con ROT13, decifriamola e otteniamo la bandiera della CTF.</description>
+    </item>
+    
+  </channel>
+</rss>
