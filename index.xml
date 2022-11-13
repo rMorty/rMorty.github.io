@@ -19,7 +19,7 @@
       <guid>https://example.com/cheatsheets/git/</guid>
       <description>Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit
 $ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit
-Creazione repository $ git init - inizializza la directory come un repository git locale
+Creazione repository $ git init - inizializza la directory come un repository Git locale
 $ git clone [url] - scarica progetto esistente e suo storico cambiamenti
 Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system</description>
     </item>
