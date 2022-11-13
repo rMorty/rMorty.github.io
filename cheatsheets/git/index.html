@@ -5,7 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="" />
+<meta name="description" content="Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit
+$ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit
+Creazione repository $ git init - inizializza la directory come un repository git locale
+$ git clone [url] - scarica progetto esistente e suo storico cambiamenti
+Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -39,22 +43,33 @@
 
 
 <meta itemprop="name" content="Git CheatSheet">
-<meta itemprop="description" content="">
-
-<meta itemprop="wordCount" content="0">
+<meta itemprop="description" content="Configurazione globale $ git config --global user.name &quot;[name]&quot; - imposta nome da mostrare nei commit
+$ git config --global user.email &quot;[email]&quot; - imposta email da mostrare nei commit
+Creazione repository $ git init - inizializza la directory come un repository git locale
+$ git clone [url] - scarica progetto esistente e suo storico cambiamenti
+Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system">
+<meta itemprop="datePublished" content="2022-11-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-11-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="415">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git CheatSheet"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Configurazione globale $ git config --global user.name &quot;[name]&quot; - imposta nome da mostrare nei commit
+$ git config --global user.email &quot;[email]&quot; - imposta email da mostrare nei commit
+Creazione repository $ git init - inizializza la directory come un repository git locale
+$ git clone [url] - scarica progetto esistente e suo storico cambiamenti
+Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system"/>
 
 
 
 
 
 
+
+    <meta property="article:published_time" content="2022-11-13 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -130,7 +145,48 @@
             
 
             <div class="post-content">
-                
+                <h3 id="configurazione-globale">Configurazione globale</h3>
+<p><code>$ git config --global user.name &quot;[name]&quot;</code> - imposta nome da mostrare nei commit<br>
+<code>$ git config --global user.email &quot;[email]&quot;</code> - imposta email da mostrare nei commit</p>
+<h3 id="creazione-repository">Creazione repository</h3>
+<p><code>$ git init</code> - inizializza la directory come un repository git locale<br>
+<code>$ git clone [url]</code> - scarica progetto esistente e suo storico cambiamenti</p>
+<h3 id="refactoring-file">Refactoring file</h3>
+<p><code>$ git rm [file]</code> - rimuovi file sia dal repository Git che dal file system<br>
+<code>$ git rm --cached [file]</code> - rimuovi file solo dal repository Git<br>
+<code>$ git mv [fileold] [filenew]</code> - modifica nome del file in preparazione a un commit</p>
+<h3 id="salvare-frammenti">Salvare frammenti</h3>
+<p><code>$ git stash</code> - archivia temporaneamente tutti i file modificati<br>
+<code>$ git stash pop</code> - ripristina file modificati recentemente<br>
+<code>$ git stash list</code> - elenca set di cambiamenti archiviati<br>
+<code>$ git stash drop</code> - elimina set di cambiamenti più recente</p>
+<h3 id="gestione-modifiche">Gestione modifiche</h3>
+<p><code>$ git status</code> - elenca i file nuovi o modificati<br>
+<code>$ git diff</code> - mostra differenze non ancora nell&rsquo;area di staging<br>
+<code>$ git add [file]</code> - aggiungi file all&rsquo;area di staging<br>
+<code>$ git diff --staged</code> - mostra differenze tra staging e ultima modifica<br>
+<code>$ git reset [file]</code> - rimuovi file dall&rsquo;area di staging, ma mantieni le modifiche<br>
+<code>$ git commit -m &quot;[descrizione]</code> - crea snapshot nello storico (salvandoci i file presenti nell&rsquo;area di staging)</p>
+<h3 id="modifiche-di-gruppo">Modifiche di gruppo</h3>
+<p><code>$ git branch</code> - elenca branch nel repository corrente<br>
+<code>$ git branch [branch_name]</code> - crea nuovo branch<br>
+<code>$ git switch -c [branch_name]</code> - passa al branch specificato e aggiorna la directory corrente<br>
+<code>$ git merge [branch_name]</code> - unisci lo storico del branch specificato con quello corrente<br>
+<code>$ git branch -d [branch_name]</code> - elimina branch specificato</p>
+<h3 id="rivedere-storico">Rivedere storico</h3>
+<p><code>$ git log</code> - elenca storico di versione per il branch corrente<br>
+<code>$ git log --follow [file]</code> - elenca lo storico di versione per il file specificato (incluse eventuali rinominazioni)<br>
+<code>$ git diff [branch1] [branch2]</code> - mostra differenze tra i branch<br>
+<code>$ git show [commit]</code> - mostra metadati e cambiamenti del commit specificato</p>
+<h3 id="annullare-commit">Annullare commit</h3>
+<p><code>$ git reset [commit]</code> - annulla tutte i commit effettuati dopo <em>commit</em>, mantenendo i cambiamenti locali<br>
+<code>$ git reset --hard [commit]</code> - elimina storico e cambiamenti fino al commit specificato</p>
+<h3 id="sincronizzare-cambiamenti">Sincronizzare cambiamenti</h3>
+<p><code>$ git fetch [remote]</code> - scarica lo storico dei cambiamenti dal repository remoto<br>
+<code>$ git merge [remote]/[branch]</code> - unisci il branch remoto con quello locale<br>
+<code>$ git push [remote] [branch]</code> - carica tutti i cambiamenti del branch locale sul repository remoto<br>
+<code>$ git pull</code> - scarica lo storico e unisci i cambiamenti</p>
+
             </div>
         </article>
 

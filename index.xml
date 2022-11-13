@@ -6,10 +6,23 @@
     <description>Recent content on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Fri, 11 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git CheatSheet</title>
+      <link>https://example.com/cheatsheets/git/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/git/</guid>
+      <description>Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit
+$ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit
+Creazione repository $ git init - inizializza la directory come un repository git locale
+$ git clone [url] - scarica progetto esistente e suo storico cambiamenti
+Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system</description>
+    </item>
     
     <item>
       <title>[Guida] Come installare i plugin in Vim</title>
@@ -155,15 +168,6 @@ Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa oc
       
       <guid>https://example.com/page/contact/</guid>
       <description>Contact Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
-    </item>
-    
-    <item>
-      <title>Git CheatSheet</title>
-      <link>https://example.com/cheatsheets/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/cheatsheets/git/</guid>
-      <description></description>
     </item>
     
     <item>
