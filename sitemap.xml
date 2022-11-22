@@ -1,117 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://example.com/posts/7/</loc>
+    <lastmod>2022-11-22T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/</loc>
+    <lastmod>2022-11-22T12:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/</loc>
+    <lastmod>2022-11-22T12:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://example.com/cheatsheets/</loc>
     <lastmod>2022-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/cheatsheets/git/</loc>
     <lastmod>2022-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/6/</loc>
     <lastmod>2022-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/posts/</loc>
-    <lastmod>2022-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/cheatsheets/terminale/</loc>
     <lastmod>2022-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/cheatsheets/vim/</loc>
     <lastmod>2022-10-06T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/5/</loc>
     <lastmod>2022-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/cheatsheets/tty-escape/</loc>
     <lastmod>2022-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/cheatsheets/bash/</loc>
     <lastmod>2022-09-19T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/3/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/4/</loc>
     <lastmod>2022-08-09T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/ctfs/</loc>
     <lastmod>2022-08-04T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/ctfs/0/</loc>
     <lastmod>2022-08-04T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/2/</loc>
     <lastmod>2022-08-02T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/0/</loc>
     <lastmod>2022-07-27T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/posts/1/</loc>
     <lastmod>2022-07-25T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/page/about/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/page/contact/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/cheatsheets/ssh/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://example.com/tags/</loc>
   </url>
-  
 </urlset>

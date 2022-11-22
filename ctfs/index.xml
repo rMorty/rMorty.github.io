@@ -6,11 +6,7 @@
     <description>Recent content in Ctfs on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Thu, 04 Aug 2022 12:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://example.com/ctfs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Aug 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/ctfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PicoCTF - Forensics</title>
       <link>https://example.com/ctfs/0/</link>
