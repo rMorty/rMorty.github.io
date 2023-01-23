@@ -6,7 +6,11 @@
     <description>Recent content on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 22 Nov 2022 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Nov 2022 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Il comando inxi</title>
       <link>https://example.com/posts/7/</link>
@@ -14,7 +18,7 @@
       
       <guid>https://example.com/posts/7/</guid>
       <description>Il comando inxi può tornarci utile ogni volta che vogliamo ottenere informazioni (soprattutto hardware, ma non solo) sul nostro sistema. Questo comando è compatibile con la maggior parte dei sistemi operativi e di hardware, e in diverse ditribuzioni lo troviamo installato di default; ma vediamo il funzionamento.
-N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man</description>
+ N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man</description>
     </item>
     
     <item>
@@ -75,7 +79,7 @@ Salvare e Uscire :w - salva, ma non uscire
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/posts/5/</guid>
-      <description>Premessa - Cos&amp;rsquo;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</description>
+      <description>Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</description>
     </item>
     
     <item>
@@ -100,7 +104,7 @@ $ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
       <pubDate>Mon, 19 Sep 2022 12:00:00 +0000</pubDate>
       
       <guid>https://example.com/cheatsheets/bash/</guid>
-      <description>Intro Variabili NAME=&amp;#34;Qsl&amp;#34; echo $VAR echo &amp;#34;$VAR&amp;#34; echo &amp;#34;${VAR}&amp;#34; Apici stringhe NAME=&amp;#34;Qsl&amp;#34; echo &amp;#34;Hello $NAME&amp;#34; -&amp;gt; Hello Qsl echo &amp;#39;Hello $NAME&amp;#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;#34;Mi trovo in $(pwd)&amp;#34; echo &amp;#34;Mi trovo in `pwd`&amp;#34; Funzioni print_world() { echo &amp;#34;World!&amp;#34; } echo &amp;#34;Hello $(print_world)&amp;#34; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.</description>
+      <description>Intro Variabili NAME=&amp;quot;Qsl&amp;quot; echo $VAR echo &amp;quot;$VAR&amp;quot; echo &amp;quot;${VAR}&amp;quot; Apici stringhe NAME=&amp;quot;Qsl&amp;quot; echo &amp;quot;Hello $NAME&amp;quot; -&amp;gt; Hello Qsl echo &#39;Hello $NAME&#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;quot;Mi trovo in $(pwd)&amp;quot; echo &amp;quot;Mi trovo in `pwd`&amp;quot; Funzioni print_world() { echo &amp;quot;World!&amp;quot; } echo &amp;quot;Hello $(print_world)&amp;quot; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.</description>
     </item>
     
     <item>
@@ -118,7 +122,7 @@ $ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
       <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
       
       <guid>https://example.com/posts/4/</guid>
-      <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&amp;rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
+      <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
     </item>
     
     <item>

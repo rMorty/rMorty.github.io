@@ -41,9 +41,13 @@ Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa oc
 
 <meta itemprop="name" content="[Guida] Come installare Arch Linux">
 <meta itemprop="description" content="Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa essere utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.
-Parte 1: Installazione Passo 1 - Avviare l&rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo"><meta itemprop="datePublished" content="2022-07-27T12:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-07-27T12:00:00+00:00" />
+Parte 1: Installazione Passo 1 - Avviare l&rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo">
+<meta itemprop="datePublished" content="2022-07-27T12:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-07-27T12:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="2045">
+
+
+
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Guida] Come installare Arch Linux"/>
@@ -151,17 +155,17 @@ Parte 1: Installazione Passo 1 - Avviare l&rsquo;installer Per prima cosa occorr
 A questo punto potremo partire con il processo di installazione (a differenza di altre distro Linux, arch non ha un installer grafico e si fa tutto da terminale).</p>
 <h3 id="passo-2---impostare-il-layout-della-tastiera">Passo 2 - Impostare il layout della tastiera</h3>
 <p>Di default viene caricato quello americano, ma possiamo cambiarlo guardando quelli disponibili in <em>/usr/share/kbd/keymap</em> e poi impostandolo con il comando <strong>loadkeys</strong>. Per impostarlo a quello italiano digiteremo</p>
-<pre tabindex="0"><code>$ loadkeys it
+<pre><code>$ loadkeys it
 </code></pre><p>(Potremmo anche cambiare font con procedimento analogo: <em>/usr/share/kbd/consolefonts</em> + comando <strong>setfont</strong>, ma credo che non sia poi così necessario per il processo di installazione).</p>
 <h3 id="passo-3---verificare-la-modalità-di-boot">Passo 3 - Verificare la modalità di boot</h3>
 <p>Assicuriamoci di aver avviato il sistema in modalità UEFI. Digitiamo</p>
-<pre tabindex="0"><code>$ ls /sys/firmware/efi/efivars
+<pre><code>$ ls /sys/firmware/efi/efivars
 </code></pre><p>e se viene restituito un elenco di file senza errori va tutto bene; altrimenti la cartella non esisterebbe nemmeno.</p>
 <h3 id="passo-4---connettersi-a-internet">Passo 4 - Connettersi a Internet</h3>
 <p>In caso di rete cablata ovviamente dovremmo essere già connessi (verificare per esempio con <code>$ ping google.com</code>), per le reti wireless invece dobbiamo connetterci usando il comando <strong>iwctl</strong>. Iniziamo dando</p>
-<pre tabindex="0"><code>$ iwctl
+<pre><code>$ iwctl
 </code></pre><p>questo aprirà un prompt interattivo in cui scriveremo i prossimi comandi:</p>
-<pre tabindex="0"><code># per vedere il nome della scheda di rete
+<pre><code># per vedere il nome della scheda di rete
 device list
 
 # per vedere le reti disponibili
@@ -176,13 +180,13 @@ exit
 </code></pre><p>Prima di proseguire verifichiamo di essere effettivamente connessi facendo un ping.</p>
 <h3 id="passo-5---aggiornare-lorologio-di-sistema">Passo 5 - Aggiornare l&rsquo;orologio di sistema</h3>
 <p>In Linux possiamo usare <strong>NTP</strong> (Network Time Protocol) per sincronizzare l&rsquo;ora attraverso la rete, digitiamo quindi</p>
-<pre tabindex="0"><code>$ timedatectl set-ntp true
+<pre><code>$ timedatectl set-ntp true
 </code></pre><h3 id="passo-6---partizionare-il-disco">Passo 6 - Partizionare il disco</h3>
 <p>Questo è sicuramente il momento più delicato: il consiglio è sempre quello di fare un backup dei dati importanti che abbiamo sul disco ed essere sicuri delle partizioni che andremo a modificare (soprattutto in caso di installazione destinata a un dual boot accanto a un altro OS).<br>
 Prima di iniziare il processo di partizionamento usiamo <strong>fdisk</strong> per vedere a quale file è stato assegnato il disco su cui effettueremo l&rsquo;installazione dando</p>
-<pre tabindex="0"><code>$ fdisk -l
+<pre><code>$ fdisk -l
 </code></pre><p>Questo comando potrebbe dare in output più di un risultato, ma possiamo ignorare quelli che terminano con <em>loop</em>, <em>rom</em> e <em>airoot</em>. Assumendo che il disco che ci interessa sia <em>/dev/sda</em> (potrebbe avere un nome diverso, tipo <em>/dev/nvme0n1</em> in caso di disco NVME), a questo punto possiamo avviare <strong>cfdisk</strong> (un tool di partizionamento utilizzabile da terminale, che però possiede un&rsquo;interfaccia interattiva) dando</p>
-<pre tabindex="0"><code>$ cfdisk /dev/sda
+<pre><code>$ cfdisk /dev/sda
 </code></pre><p>Nel caso in cui ci chieda di scegliere il tipo di tabella delle partizioni, selezioniamo <em>gpt</em> perchè siamo in modalità UEFI, dopo di che ci troveremo davanti all&rsquo;interfaccia del programma:</p>
 <p><img src="/images/linux/0/cfdisk.png" alt="cfdisk"><br>
 Per poter installare Arch abbiamo bisogno di 3 partizioni:</p>
@@ -195,41 +199,41 @@ Per poter installare Arch abbiamo bisogno di 3 partizioni:</p>
 Premiamo <em>New</em> e inseriamo la dimensione che vogliamo (che consiste nel numero seguito da una lettera: M per megabytes, G per gigabytes e T per terabytes). La prima che creiamo sarà quella EFI (in caso di installazione accanto a Windows questa partizione dovrebbe essere già presente: lasciamola e creiamo le altre) e sono sufficienti 500M; dopo aver confermato dovremmo avere una situazione del genere:</p>
 <p><img src="/images/linux/0/cfdisk_efi0.png" alt="cfdisk efi"><br>
 ed ora bisogna specificare il tipo di partizione, perciò premiamo <em>Type</em> e dalla lista che esce selezioniamo <em>EFI System</em>.<br>
-Con lo spazio rimanente ripetiamo il procedimento due volte per creare prima la partizione di root (la cui dimensione è a nostra discrezione, e il tipo è quello predefinito <em>Linux filesystem</em>) e poi quella di swap (anche qui per la dimensione non c&rsquo;è una regola precisa, potete cercare qualche consiglio online; mentre il tipo è <em>Linux swap</em>). Alla fine il risultato dovrebbe essere simile a questo:</p>
+Con lo spazio rimanente ripetiamo il procedimento due volte per creare prima la partizione di root (la cui dimensione è a nostra discrezione, e il tipo è quello predefinito <em>Linux filesystem</em>) e poi quella di swap (anche qui per la dimensione non c'è una regola precisa, potete cercare qualche consiglio online; mentre il tipo è <em>Linux swap</em>). Alla fine il risultato dovrebbe essere simile a questo:</p>
 <p><img src="/images/linux/0/cfdisk_fine.png" alt="cfdisk fine"><br>
 Se siamo sicuri, clicchiamo su <em>Write</em>, digitiamo <em>yes</em> e infine selezioniamo <em>Quit</em>.</p>
 <h3 id="passo-7---formattare-le-partizioni">Passo 7 - Formattare le partizioni</h3>
 <p>Qui useremo i programmi <strong>mkfs</strong> e <strong>mkswap</strong>. Prima di procedere però diamo uno sguardo finale alla nostra lista delle partizioni con</p>
-<pre tabindex="0"><code>$ fdisk -l /dev/sda
+<pre><code>$ fdisk -l /dev/sda
 </code></pre><p><img src="/images/linux/0/lista_partizioni.png" alt="lista partizioni"><br>
 La partizione EFI (questo caso <em>/dev/sda1</em>) deve essere formattata come FAT32, quindi diamo</p>
-<pre tabindex="0"><code>$ mkfs.fat -F32 /dev/sda1
+<pre><code>$ mkfs.fat -F32 /dev/sda1
 </code></pre><p>Quella di root invece come <em>EXT4</em>, quindi</p>
-<pre tabindex="0"><code>$ mkfs.ext4 /dev/sda2
+<pre><code>$ mkfs.ext4 /dev/sda2
 </code></pre><p>Infine, per formattare quella di swap</p>
-<pre tabindex="0"><code>$ mkswap /dev/sda3
+<pre><code>$ mkswap /dev/sda3
 </code></pre><h3 id="passo-8---montare-il-file-system">Passo 8 - Montare il file system</h3>
 <p>Usiamo il comando <strong>mount</strong> per montare il volume di root in <em>/mnt</em>:</p>
-<pre tabindex="0"><code>$ mount /dev/sda2 /mnt
+<pre><code>$ mount /dev/sda2 /mnt
 </code></pre><p>Per la swap invece dobbiamo usare il comando <strong>swapon</strong>:</p>
-<pre tabindex="0"><code>$ swapon /dev/sda3
+<pre><code>$ swapon /dev/sda3
 </code></pre><p>Della partizione EFI ce ne occuperemo dopo.</p>
 <h3 id="passo-9---configurare-i-mirrors">Passo 9 - Configurare i mirrors</h3>
 <p>Su Arch i pacchetti da installare vengono scaricati da dei server mirror definiti in una lista nel file <em>/etc/pacman.d/mirrorlist</em>. Nel sistema live di Arch possiamo usare lo script <strong>reflector</strong> per aggiornare la lista. Lanciamo prima lo script da solo per assicurarci che funzioni</p>
-<pre tabindex="0"><code>$ reflector
+<pre><code>$ reflector
 </code></pre><p>L&rsquo;output sarà simile al seguente:</p>
 <p><img src="/images/linux/0/reflector.png" alt="reflector"><br>
 Se tutto va bene, facciamo una copia preventiva della lista attuale con</p>
-<pre tabindex="0"><code>$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+<pre><code>$ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 </code></pre><p>e poi sovrascriviamola:</p>
-<pre tabindex="0"><code>$ reflector --country Italy,Germany,France --protocol https --sort rate --age 12 --save /etc/pacman.d/mirrorlist  
-# per la comprensione di tutti i parametri basta guardare l&#39;help di reflector
+<pre><code>$ reflector --country Italy,Germany,France --protocol https --sort rate --age 12 --save /etc/pacman.d/mirrorlist  
+# per la comprensione di tutti i parametri basta guardare l'help di reflector
 </code></pre><p>Se mentre lo script è in esecuzione viene stampato qualche errore non preoccupiamoci, nella lista andranno solo i mirror funzionanti (e in ogni caso alla fine possiamo vedere che sia tutto apposto con <code>$ cat /etc/pacman.d/mirrorlist</code>).</p>
 <h3 id="passo-10---installare-i-programmi-essenziali">Passo 10 - Installare i programmi essenziali</h3>
 <p>Prima di procedere aggiorniamo la cache dei pacchetti del sistema con i nuovi mirror dando</p>
-<pre tabindex="0"><code>$ pacman -Sy
+<pre><code>$ pacman -Sy
 </code></pre><p>Adesso usiamo lo script <strong>pacstrap</strong> per installare i programmi, che passiamo come argomento, nella partizione di root (che abbiamo montato in <em>/mnt</em>):</p>
-<pre tabindex="0"><code>$ pacstrap /mnt base base-devel linux linux-firmware sudo nano man-db ntfs-3g networkmanager
+<pre><code>$ pacstrap /mnt base base-devel linux linux-firmware sudo nano man-db ntfs-3g networkmanager
 </code></pre><ul>
 <li><strong>base</strong> - necessario per un&rsquo;installazione minima di Arch</li>
 <li><strong>base-devel</strong> - per compilare e linkare i sorgenti</li>
@@ -245,73 +249,73 @@ Se tutto va bene, facciamo una copia preventiva della lista attuale con</p>
 <h1 id="parte-2-configurazione">Parte 2: Configurazione</h1>
 <h3 id="passo-1---generare-il-file-fstab">Passo 1 - Generare il file Fstab</h3>
 <p>Questo file serve per definire il modo in cui le partizioni devono essere montate nel file system. Generiamolo con</p>
-<pre tabindex="0"><code>$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+<pre><code>$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
 </code></pre><h3 id="passo-2---cambiare-la-radice">Passo 2 - Cambiare la radice</h3>
 <p>Usiamo lo script <strong>arch-chroot</strong> per fare il login nel nostro nuovo sistema che abbiamo appena installato, senza dover fare il reboot:</p>
-<pre tabindex="0"><code>$ arch-chroot /mnt
+<pre><code>$ arch-chroot /mnt
 </code></pre><h3 id="passo-3---fuso-orario">Passo 3 - Fuso orario</h3>
 <p>La lista delle località principali la troviamo sotto <em>/usr/share/zoneinfo</em>. Nel nostro caso, se vogliamo impostare l&rsquo;ora italiana, diamo</p>
-<pre tabindex="0"><code>$ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+<pre><code>$ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 </code></pre><h3 id="passo-4---localizzazione">Passo 4 - Localizzazione</h3>
 <p>Ora configuriamo la lingua di sistema. Apriamo il file <em>/etc/locale.gen</em> con</p>
-<pre tabindex="0"><code>$ nano /etc/locale.gen
+<pre><code>$ nano /etc/locale.gen
 </code></pre><p>e decommentiamo <code>#it_IT.UTF-8 UTF-8</code>; dopo generiamo le localizzazioni con</p>
-<pre tabindex="0"><code>$ locale-gen
+<pre><code>$ locale-gen
 </code></pre><p>Ora creiamo il file <em>/etc/locale.conf</em> e impostiamo la variabile <em>LANG</em>: diamo quindi</p>
-<pre tabindex="0"><code>$ nano /etc/locale.conf
+<pre><code>$ nano /etc/locale.conf
 </code></pre><p>e scriviamoci <code>LANG=it_IT.UTF-8</code>. Inoltre, se all&rsquo;inizio avevamo cambiato il layout della tastiera, rendiamo questa modifica persistente modificando il file <em>/etc/vcosnole.conf</em>:</p>
-<pre tabindex="0"><code>$ nano /etc/vconsole.conf
+<pre><code>$ nano /etc/vconsole.conf
 </code></pre><p>e inseriamo <code>KEYMAP=it</code>.<br>
 (Ovviamente in caso di lingua diversa il procedimento resterebbe invariato, l&rsquo;unica differenza sarebbero le variabili. Possiamo anche abilitare più lingue decommentando quelle che ci interessano in <em>/etc/locale.gen</em>, e poi stabilire quale usare di default scrivendola in <em>/etc/locale.conf</em>).</p>
 <h3 id="passo-5---configurazione-della-rete">Passo 5 - Configurazione della rete</h3>
 <p>Per prima cosa impostiamo l&rsquo;hostname della macchina scrivendolo dentro al file <em>/etc/hostname</em>, come nome potete usare quello che volete (io generalmente uso il nome del modello del computer, in questo caso quindi essendo su un laptop Acer Swift ci scriverò <code>swift</code>).<br>
 Ora modifichiamo il file <em>/etc/hosts</em> e inseriamo le seguenti righe:</p>
-<pre tabindex="0"><code>127.0.0.1   localhost
+<pre><code>127.0.0.1   localhost
 ::1         localhost
 127.0.0.1   swift
 </code></pre><p>E infine abilitiamo il servizio <em>networkmanager</em>, che abbiamo già installato, in modo tale che venga caricato automaticamente all&rsquo;avvio del sistema:</p>
-<pre tabindex="0"><code>$ systemctl enable NetworkManager
+<pre><code>$ systemctl enable NetworkManager
 </code></pre><h3 id="passo-6---impostare-la-password-di-root">Passo 6 - Impostare la password di root</h3>
 <p>Digitiamo prima</p>
-<pre tabindex="0"><code>$ passwd
+<pre><code>$ passwd
 </code></pre><p>e poi inseriamo la password che vogliamo.<br>
 (Lanciato così senza parametri, il comando ci fa cambiare la password per l&rsquo;utente corrente, che ora è proprio l&rsquo;utente root).</p>
 <h3 id="passo-7---creare-un-utente-non-root">Passo 7 - Creare un utente non root</h3>
 <p>Ovviamente è fondamentale usare il nostro sistema come utente senza massimi privilegi, tranne che nei casi in cui non siano necessari. Diamo dunque</p>
-<pre tabindex="0"><code>$ useradd -m -G wheel qsl
+<pre><code>$ useradd -m -G wheel qsl
 </code></pre><p>l&rsquo;opzione <em>-m</em> serve per creare la directory home dell&rsquo;utente, il <em>-G wheel</em> per aggiungere l&rsquo;utente al gruppo wheel (gruppo di amministrazione di Arch), e infine <em>qsl</em> è il nome scelto in questo caso per l&rsquo;utente (voi sostituitelo con quello che volete).<br>
 Approfittiamo per impostare la password del nuovo utente con</p>
-<pre tabindex="0"><code>$ passwd qsl
+<pre><code>$ passwd qsl
 </code></pre><p>Poi abilitiamo anche i privilegi di <em>sudo</em>: apriamo il file /etc/sudoers e troviamo e decommentiamo la stringa <code># %wheel ALL=(ALL) ALL</code>.</p>
 <h3 id="passo-8---installare-microcode">Passo 8 - Installare Microcode</h3>
 <p>I produttori di processori come AMD e Intel rilasciano spesso aggiornamenti di sicurezza e stabilità per i processori, che sono importanti per la sicurezza stessa del nostro sistema; per poter ricevere questi aggiornamenti dobbiamo installare il relativo pacchetto:</p>
-<pre tabindex="0"><code># per processori AMD
+<pre><code># per processori AMD
 $ pacman -S amd-ucode
 
 # per processori Intel
 $ pacman -S intel-ucode
 </code></pre><h3 id="passo-9---installare-e-configurare-il-bootloader">Passo 9 - Installare e configurare il bootloader</h3>
 <p>Per installare il bootloader <strong>GRUB</strong> (non è l&rsquo;unico possibile, ma è sicuramente il più usato) prima abbiamo bisogno di questi due pacchetti:</p>
-<pre tabindex="0"><code>$ pacman -S grub efibootmgr
+<pre><code>$ pacman -S grub efibootmgr
 </code></pre><blockquote>
 <p>In caso di installazione accanto ad un altro OS dovremo installare anche il pacchetto <strong>os-prober</strong></p>
 </blockquote>
 <p>Ora dobbiamo montare la partizione EFI:</p>
-<pre tabindex="0"><code>$ mkdir /boot/efi
+<pre><code>$ mkdir /boot/efi
 $ mount /dev/sda1 /boot/efi
 </code></pre><p>A questo punto possiamo installare il bootloader nella partizione appena montata:</p>
-<pre tabindex="0"><code>$ grub-install --removable --target=x86_64-efi --bootloader-id=grub
+<pre><code>$ grub-install --removable --target=x86_64-efi --bootloader-id=grub
 </code></pre><blockquote>
 <p>Se siamo nel caso di dual boot dobbiamo fare un ulteriore passaggio prima di continuare, ovvero abilitare <em>os-prober</em> prima di creare il file di configurazione: apriamo il file <em>/etc/default/grub</em> e decommentiamo la riga<code>#GRUB_DISABLE_OS_PROBER=false</code> (dovrebbe essere l&rsquo;ultima riga del file)</p>
 </blockquote>
 <p>Ora Generiamo il file di configurazione:</p>
-<pre tabindex="0"><code>$ grub-mkconfig -o /boot/grub/grub.cfg
+<pre><code>$ grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre><h3 id="passo-10---installare-xorg">Passo 10 - Installare Xorg</h3>
 <p><strong>Xorg</strong> è necessario per poter eseguire i programmi che hanno un&rsquo;interfaccia grafica; installiamolo con:</p>
-<pre tabindex="0"><code>$ pacman -S xorg-server
+<pre><code>$ pacman -S xorg-server
 </code></pre><h3 id="passo-11---installare-i-driver-per-la-grafica">Passo 11 - Installare i driver per la grafica</h3>
 <p>Qui dobbiamo solo installare il giusto pacchetto in base alla nostra scheda grafica:</p>
-<pre tabindex="0"><code># per schede grafiche Nvidia
+<pre><code># per schede grafiche Nvidia
 pacman -S nvidia nvidia-utils
 
 # per schede grafiche AMD dedicate e integrate
@@ -321,17 +325,17 @@ pacman -S xf86-video-amdgpu
 pacman -S xf86-video-intel
 </code></pre><h3 id="passo-12---installare-un-desktop-environment">Passo 12 - Installare un Desktop Environment</h3>
 <p>Per i DE la scelta è molto ampia; io per semplicità riporto solo il caso di installazione di <strong>GNOME</strong>. Iniziamo con:</p>
-<pre tabindex="0"><code>$ pacman -S gnome
+<pre><code>$ pacman -S gnome
 </code></pre><p>(Durante l&rsquo;installazione ci verrà chiesta una scelta per diversi pacchetti: possiamo premere Invio per accettare quelli di default).<br>
 Adesso abilitiamo <strong>GDM</strong> (Gnome Display Manager):</p>
-<pre tabindex="0"><code>$ systemctl enable gdm
+<pre><code>$ systemctl enable gdm
 </code></pre><h3 id="passo-13---terminare-linstallazione">Passo 13 - Terminare l&rsquo;installazione</h3>
 <p>A questo punto finalmente l&rsquo;intero processo è terminato e possiamo goderci il nostro nuovo sistema. Per prima cosa usciamo da <em>arch-chroot</em>:</p>
-<pre tabindex="0"><code>$ exit
+<pre><code>$ exit
 </code></pre><p>Poi smontiamo la partizione root:</p>
-<pre tabindex="0"><code>$ umount -R /mnt
+<pre><code>$ umount -R /mnt
 </code></pre><p>e spegniamo il sistema:</p>
-<pre tabindex="0"><code>$ poweroff
+<pre><code>$ poweroff
 </code></pre><p>Ora possiamo rimuovere la chiavetta USB e avviare il pc; dal menu di GRUB che ci apparirà selezioniamo <em>Arch Linux</em> e dovrebbe comparire la schermata di login di GNOME (o qualsiasi altro DE abbiate scelto): inseriamo le nostre credenziali e&hellip; siamo dentro!<br>
 La prossima volta che installeremo una distro Linux con installer grafico sarà come dare un <em>pacman -Syu</em>.</p>
 
@@ -391,7 +395,7 @@ La prossima volta che installeremo una distro Linux con installer grafico sarà 
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
             
             
@@ -415,7 +419,7 @@ La prossima volta che installeremo una distro Linux con installer grafico sarà 
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 

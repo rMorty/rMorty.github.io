@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Premessa - Cos&amp;rsquo;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio)." />
+<meta name="description" content="Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio)." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -39,13 +39,17 @@
 
 
 <meta itemprop="name" content="Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash">
-<meta itemprop="description" content="Premessa - Cos&rsquo;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio)."><meta itemprop="datePublished" content="2022-10-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-10-05T00:00:00+00:00" />
+<meta itemprop="description" content="Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).">
+<meta itemprop="datePublished" content="2022-10-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-10-05T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="301">
+
+
+
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash"/>
-<meta name="twitter:description" content="Premessa - Cos&rsquo;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio)."/>
+<meta name="twitter:description" content="Premessa - Cos&#39;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio)."/>
 
 
 
@@ -130,7 +134,7 @@
 
     <article>
       <h1 class="post-title">
-        <a href="https://example.com/posts/5/">Cos&rsquo;è la Fork Bomb :(){ :|:&amp; };: in Bash</a>
+        <a href="https://example.com/posts/5/">Cos'è la Fork Bomb :(){ :|:&amp; };: in Bash</a>
       </h1>
 
       
@@ -140,14 +144,14 @@
       
 
       <div class="post-content">
-        <h2 id="premessa---cosè-una-fork-bomb">Premessa - Cos&rsquo;è una fork bomb</h2>
+        <h2 id="premessa---cosè-una-fork-bomb">Premessa - Cos'è una fork bomb</h2>
 <p>Possiamo immaginarci una fork bomb come un attacco di tipo <em>DoS (Denial of Service)</em> contro un sistema che utilizza la funzione <em>fork</em>. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</p>
 <h2 id="la-fork-bomb-in-bash">La Fork Bomb in Bash</h2>
 <p>Vediamo come il comando bash <code>$ :(){ :|:&amp; };:</code> sia effettivamente una fork bomb:</p>
 <ul>
 <li><strong>:()</strong> dichiara la funzione (ricorsiva) chiamata <em>:</em>, che non prevede argomenti</li>
 <li><strong>{}</strong> i comandi tra le parentesi sono il corpo della funzione</li>
-<li><strong>:|:</strong> qui c&rsquo;è la ricorsione: la funzione chiama se stessa e manda (tramite pipe) l&rsquo;output ad un&rsquo;altra chiamata di se stessa</li>
+<li><strong>:|:</strong> qui c'è la ricorsione: la funzione chiama se stessa e manda (tramite pipe) l&rsquo;output ad un&rsquo;altra chiamata di se stessa</li>
 <li><strong>&amp;</strong> fa eseguire il comando precedente (il corpo della funzione) in background, così che i processi figli non vengano killati</li>
 <li><strong>;</strong> è per separare comandi multipli in bash</li>
 <li><strong>:</strong> è la chiamata alla funzione definita</li>
@@ -155,10 +159,10 @@
 <p>Se la distribuzione che usiamo utilizza <em>systemd</em>, questo comando anche se eseguito non porterebbe ad alcun crash. Questo perchè systemd, per ogni utente, imposta un limite alle risorse utilizzabili (numero di processi, cicli di CPU, utilizzo della RAM).</p>
 <h3 id="extra---proteggersi-da-una-fork-bomb">Extra - Proteggersi da una fork bomb</h3>
 <p>Supponiamo di essere su un sistema senza protezione &ldquo;nativa&rdquo; della fork bomb e vediamo come potremmo rimediare. Esiste il comando <strong>ulimit</strong> per controllare (opzione <em>-u</em>) il numero massimo di processi utilizzabili da un utente. Una volta scelto il nuovo numero (ovviamente, minore del precedente) da assegnare, dovremo modificare il file <em>/etc/security/limits.conf</em> e aggiungere la seguente linea:</p>
-<pre tabindex="0"><code># Per tutti gli utenti del gruppo wheel
+<pre><code># Per tutti gli utenti del gruppo wheel
 @wheel  hard nproc  [numero_processi]
 
-# Solo per l&#39;utente qsl
+# Solo per l'utente qsl
 qsl  hard nproc  [numero_processi]
 </code></pre>
       </div>
@@ -217,7 +221,7 @@ qsl  hard nproc  [numero_processi]
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
             
             
@@ -241,7 +245,7 @@ qsl  hard nproc  [numero_processi]
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 

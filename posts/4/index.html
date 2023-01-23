@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&amp;rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale" />
+<meta name="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -39,13 +39,17 @@
 
 
 <meta itemprop="name" content="[Guida] Come personalizzare il prompt della shell Bash">
-<meta itemprop="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale"><meta itemprop="datePublished" content="2022-08-09T12:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-08-09T12:00:00+00:00" />
+<meta itemprop="description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale">
+<meta itemprop="datePublished" content="2022-08-09T12:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-08-09T12:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="308">
+
+
+
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Guida] Come personalizzare il prompt della shell Bash"/>
-<meta name="twitter:description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale"/>
+<meta name="twitter:description" content="Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&#39;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale"/>
 
 
 
@@ -141,8 +145,8 @@
 
       <div class="post-content">
         <p>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema).
-Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente <strong>PS1</strong>: quindi, per controllare quella attuale, diamo da terminale</p>
-<pre tabindex="0"><code>$ echo $PS1
+Innanzitutto c'è da sapere che la configurazione viene salvata in una variabile di ambiente <strong>PS1</strong>: quindi, per controllare quella attuale, diamo da terminale</p>
+<pre><code>$ echo $PS1
 </code></pre><p>È probabile che di default la variabile sia settata a <code>[\u@\h \W]\$</code> o qualcosa di simile, e in particolare ecco il significato dei singoli componenti:</p>
 <ul>
 <li><strong>\u</strong> mostra l&rsquo;username corrente</li>
@@ -151,7 +155,7 @@ Innanzitutto c&rsquo;è da sapere che la configurazione viene salvata in una var
 <li><strong>\S</strong> mostra <em>#</em> se siamo root, oppure <em>$</em></li>
 </ul>
 <p>Per personalizzare il prompt dobbiamo quindi modificare questa variabile aggiungendo oppure togliendo i componenti relativi alle informazioni che vogliamo vedere. Supponiamo per esempio di volerlo modificare rispetto al precedente, affinchè tra le parentesi venga mostrato solo l&rsquo;username: in questo caso possiamo digitare da terminale</p>
-<pre tabindex="0"><code>$ export PS1=&#34;[\u]\$&#34;
+<pre><code>$ export PS1=&quot;[\u]\$&quot;
 </code></pre><p>Finchè questo comando viene eseguito così da terminale, gli effetti saranno relativi soltanto alla sessione in corso; se vogliamo renderli definitivi dobbiamo invece aggiungerlo al file <code>~/.bash_profile</code> oppure <code>~/.bashrc</code>.<br>
 Per intervenire sui colori invece la sintassi sarà del tipo <code>\e[x;ym$PS1 \e[m</code>, dove:</p>
 <ul>
@@ -199,7 +203,7 @@ Per intervenire sui colori invece la sintassi sarà del tipo <code>\e[x;ym$PS1 \
 </tbody>
 </table>
 <p>Riprendiamo il comando precedente, stavolta però vogliamo che il prompt venga mostrato con una colorazione verde: in questo caso daremo</p>
-<pre tabindex="0"><code>$ export PS1=&#34;\e[0;32m[\u]\$ \e[m&#34;
+<pre><code>$ export PS1=&quot;\e[0;32m[\u]\$ \e[m&quot;
 </code></pre>
       </div>
     </article>
@@ -257,7 +261,7 @@ Per intervenire sui colori invece la sintassi sarà del tipo <code>\e[x;ym$PS1 \
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
             
             
@@ -281,7 +285,7 @@ Per intervenire sui colori invece la sintassi sarà del tipo <code>\e[x;ym$PS1 \
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 
