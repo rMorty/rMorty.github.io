@@ -5,8 +5,25 @@
         <description>Recent content in Posts on QSL</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>it-IT</language>
-        <lastBuildDate>Tue, 22 Nov 2022 12:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 24 Feb 2023 12:00:00 +0000</lastBuildDate>
         <atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Cos&#39;è lo Slow HTTP Attack</title>
+            <link>https://example.com/posts/8/</link>
+            <pubDate>Fri, 24 Feb 2023 12:00:00 +0000</pubDate>
+            
+            <guid>https://example.com/posts/8/</guid>
+            <description>In questi ultimi giorni sono state pubblicate diverse notizie riguardanti un attacco informatico da parte di un gruppo di hacker filorussi avente come bersaglio diversi siti istituzionali italiani, come quello dei Carabinieri e quelli del ministero dell&amp;rsquo;Interno e degli Afari Esteri. Se però gli ultimi grossi attacchi riportati dalla stampa verso grosse aziende (nazionali e non) erano stati eseguiti tramite ransomware o campagne di phishing, questa volta è stato diverso: infatti non sono stati presi di mira i dati dell&amp;rsquo;azienda o degli utenti, ma il funzionamento dei siti attaccati.</description>
+            <content type="html"><![CDATA[<p>In questi ultimi giorni sono state pubblicate diverse notizie riguardanti un attacco informatico da parte di un gruppo di hacker filorussi avente come bersaglio diversi siti istituzionali italiani, come quello dei Carabinieri e quelli del ministero dell&rsquo;Interno e degli Afari Esteri. Se però gli ultimi grossi attacchi riportati dalla stampa verso grosse aziende (nazionali e non) erano stati eseguiti tramite ransomware o campagne di phishing, questa volta è stato diverso: infatti non sono stati presi di mira i dati dell&rsquo;azienda o degli utenti, ma il funzionamento dei siti attaccati. Questo è stato fatto con un tipo di attacco DoS, e prima di proseguire facciamo un breve recap su cosa sono.</p>
+<h3 id="recap-cosè-un-attacco-dos">Recap: Cos'è un attacco DoS</h3>
+<p>Un attacco DoS (<em>Denial of Service</em>) mira ad impedire agli utenti di accedere ad un servizio o una risorsa online; questo viene fatto sovraccaricando il server con un traffico dati talmente elevato da rendere il servizio inutilizzabile, o comunque estrememente lento. Generalmente viene realizzato tramite quello che viene chiamato <em>flooding</em> dei pacchetti, in cui semplicemente si invia al server vittima un grande numero di richieste, ma dal punto di vista più tecnico poi ci sono più modi per metterlo in atto (per esempio può essere sfruttato il protocollo TCP, ma anche quello ICMP).<br>
+Spesso per ottenere un effetto ancora più forte gli attaccanti fanno uso di <em>botnet</em>, ovvero reti composte da computer infettati da malware che agiscono tutti sotto il controllo di uno stesso dispositivo, il <em>botmaster</em>. Questa tecnica permette di aumentare notevolmente la capcità dell&rsquo;attacco e dà origine a quelli che vengono chiamati attacchi DDoS (<em>Distributed Denial of Service</em>).</p>
+<h3 id="lattacco-slow-http">L&rsquo;attacco Slow HTTP</h3>
+<p>Ma torniamo a noi, e vediamo in che modo l&rsquo;attacco che abbiamo citato rientra nella categoria dei DoS. L&rsquo;attacco in questione sfrutta una caratteristica (che in questo caso diventa la vulnerabilità) del protocollo HTTP, che consente a un client di inviare una richiesta HTTP e mantenere la connessione aperta senza inviare mai i dati completi della richiesta.<br>
+In questo caso i pacchetti inviati (in gran numero) sono quindi pacchetti HTTP: l&rsquo;attaccante invia tante richieste HTTP incomplete in modo lento, così che per ogni connessione aperta il server resti in attesa di ricevere la richiesta completa che però in realtà non arriva. In questo modo verrà saturato il pool con cui il server può gestire più connessioni contemporaneamente e avremo il down del servizio.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Il comando inxi</title>
@@ -68,7 +85,7 @@ Graphics:
     resolution: 1920x1080~60Hz
   API: OpenGL v: 4.6 Mesa 22.2.3 renderer: Mesa Intel HD Graphics 620 (KBL GT2)
 </code></pre><p>e così via per gli altri.<br>
-Un&rsquo;altra funzionalità importante di inxi è la possibilità di filtraggio automatico dell&rsquo;output grazie al&rsquo;opzione <em>-z</em>, e questo è molto utile dal momento che l&rsquo;output di questo comando viene spesso riportato nei forum quando si chiede aiuto per risolvere un problema nel nostro sistema. Per verificarlo basta dare un <code>$ inxi -F</code> (full output) e confrontarlo con <code>$ inxi -Fz</code>: noteremo che eventuali aree sensibili come per esempio il MAC address non saranno visualizzate.<br>
+Un&rsquo;altra funzionalità importante di inxi è la possibilità di filtraggio automatico dell&rsquo;output grazie all&rsquo;opzione <em>-z</em>, e questo è molto utile dal momento che l&rsquo;output di questo comando viene spesso riportato nei forum quando si chiede aiuto per risolvere un problema nel nostro sistema. Per verificarlo basta dare un <code>$ inxi -F</code> (full output) e confrontarlo con <code>$ inxi -Fz</code>: noteremo che eventuali aree sensibili come per esempio il MAC address non saranno visualizzate.<br>
 Menzioniamo l&rsquo;ultimo (inaspettato) scenario in cui può essere utile questo comando, ovvero per controllare il meteo dal terminale. Possiamo sia controllarlo per la nostra località con l&rsquo;opzione <em>-w</em>, sia specificare una località diversa con <em>-W</em>.</p>
 ]]></content>
         </item>
