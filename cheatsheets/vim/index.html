@@ -58,7 +58,7 @@ Salvare e Uscire :w - salva, ma non uscire
 :q - esci (fallisce se ci sono modifiche non salvate)">
 <meta itemprop="datePublished" content="2022-10-06T12:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2022-10-06T12:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1225">
+<meta itemprop="wordCount" content="1248">
 
 
 
@@ -286,7 +286,7 @@ Salvare e Uscire :w - salva, ma non uscire
 <blockquote>
 <p>per saltare a un mark possiamo usare sia <strong>`</strong> (backtick) che <strong>'</strong> (apostrofo). Con l&rsquo;apostrofo saltiamo all&rsquo;inizio (prima posizione non vuota) della riga contenente il mark</p>
 </blockquote>
-<h3 id="copia-e-incolla">Copia e incolla</h3>
+<h3 id="copia-incolla-taglia">Copia, incolla, taglia</h3>
 <p><code>yy</code> - copia riga<br>
 <code>2yy</code> - copia 2 righe<br>
 <code>yw</code> - copia i caratteri della parola tra il cursore e l&rsquo;inizio della prossima parola<br>
@@ -303,7 +303,9 @@ Salvare e Uscire :w - salva, ma non uscire
 <code>diw</code> - elimina (taglia) parola sotto al cursore<br>
 <code>daw</code> - elimina (taglia) parola sotto al cursore e lo spazio prima/dopo essa<br>
 <code>D</code> - elimina (taglia) fino alla fine della riga<br>
-<code>x</code> - elimina (taglia) carattere</p>
+<code>x</code> - elimina (taglia) carattere<br>
+<code>:.,$d</code> - elimina (taglia) tutte le righe del file a partire dal cursore<br>
+<code>:1,5d</code> - elimina (taglia) le righe dalla 1 alla 5</p>
 <h3 id="trova-e-sostituisci">Trova e sostituisci</h3>
 <p><code>/pattern</code> - cerca &ldquo;pattern&rdquo;<br>
 <code>?pattern</code> - cerca &ldquo;pattern&rdquo; all&rsquo;indietro<br>
