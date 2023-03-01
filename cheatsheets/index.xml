@@ -6,10 +6,22 @@
     <description>Recent content in Cheatsheets on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tmux CheatSheet</title>
+      <link>https://example.com/cheatsheets/tmux/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/tmux/</guid>
+      <description>Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intrero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
+Finestra - insieme dei pannelli che occupano lo schermo
+Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente
+Client - il processo in background che mostra la sessione</description>
+    </item>
     
     <item>
       <title>Git CheatSheet</title>
