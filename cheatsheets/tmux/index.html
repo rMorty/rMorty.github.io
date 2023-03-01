@@ -150,9 +150,7 @@ Client - il processo in background che mostra la sessione"/>
 <code>Server</code> - tutte le sessioni sono gestite da un server singolo. Il server e il client comunicano tramite una socket in /tmp</p>
 <h3 id="comandi-generali">Comandi generali</h3>
 <blockquote>
-<blockquote>
 <p>In seguito verranno elencati diversi comandi: alcuni sono da eseguire dal nostro terminale di sistema (fuori da Tmux), mentre altri sono scorciatoie da eseguire dentro a Tmux (dopo aver digitato la combinazione di tasti adeguata). Per discriminare tra i due, userò il <em>$</em> per indicare quelli del primo tipo.</p>
-</blockquote>
 </blockquote>
 <p><code>$ tmux</code> - avvia Tmux<br>
 <code>$ tmux list-keys</code> - mostra tutti i comandi<br>
@@ -160,9 +158,7 @@ Client - il processo in background che mostra la sessione"/>
 <code>$ tmux info</code> - mostra tutte le sessioni, pannelli e finestre<br>
 <code>$ tmux a</code> - (re)attach alla sessione creata più recentemente</p>
 <blockquote>
-<blockquote>
 <p>Prima di proseguire con i prossimi comandi, è bene menzionare che il comportamento di Tmux può essere modificato specificandolo nel file <em>~/.tmux.conf</em>. Di default questo file non è presente, quindi possiamo sia crearlo e configurarlo da zero, sia partire da quello di esempio fornito con l&rsquo;installazione di Tmux che si trova in <em>/usr/share/doc/tmux/example_tmux.conf</em> (andrà copiato nella nostra home e rinominato). Per quanto riguarda la combinazione di tasti da premere per mandare un comando a Tmux invece che alla shell, questa sarà sottinteso essere <em>Ctrl+b</em> (quella di default) anche quando non specificato. In caso di modifica nel file di configurazione (nel file di esempio viene impostata la <em>a</em> invece della <em>b</em>), basta sostituirla con quella scelta.</p>
-</blockquote>
 </blockquote>
 <p><code>:</code> - entra in modalità comando<br>
 <code>?</code> o <code>:list-keys</code> - mostra tutti i comandi<br>
