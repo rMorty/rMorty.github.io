@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="Il comando inxi può tornarci utile ogni volta che vogliamo ottenere informazioni (soprattutto hardware, ma non solo) sul nostro sistema. Questo comando è compatibile con la maggior parte dei sistemi operativi e di hardware, e in diverse ditribuzioni lo troviamo installato di default; ma vediamo il funzionamento.
- N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man" />
+N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -41,18 +41,14 @@
 
 <meta itemprop="name" content="Il comando inxi">
 <meta itemprop="description" content="Il comando inxi può tornarci utile ogni volta che vogliamo ottenere informazioni (soprattutto hardware, ma non solo) sul nostro sistema. Questo comando è compatibile con la maggior parte dei sistemi operativi e di hardware, e in diverse ditribuzioni lo troviamo installato di default; ma vediamo il funzionamento.
- N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man">
-<meta itemprop="datePublished" content="2022-11-22T12:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2022-11-22T12:00:00&#43;00:00" />
+N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man"><meta itemprop="datePublished" content="2022-11-22T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-11-22T12:00:00+00:00" />
 <meta itemprop="wordCount" content="572">
-
-
-
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Il comando inxi"/>
 <meta name="twitter:description" content="Il comando inxi può tornarci utile ogni volta che vogliamo ottenere informazioni (soprattutto hardware, ma non solo) sul nostro sistema. Questo comando è compatibile con la maggior parte dei sistemi operativi e di hardware, e in diverse ditribuzioni lo troviamo installato di default; ma vediamo il funzionamento.
- N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man"/>
+N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man"/>
 
 
 
@@ -152,7 +148,7 @@
 <p><strong>N.B.</strong> Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man</p>
 </blockquote>
 <p>Iniziamo con l&rsquo;opzione <em>-b</em>, che serve per ottenere un&rsquo;overview basica del sistema:</p>
-<pre><code>$ inxi -b
+<pre tabindex="0"><code>$ inxi -b
 System:
   Host: swift Kernel: 6.0.6-arch1-1 arch: x86_64 bits: 64 Desktop: GNOME
     v: 43.1 Distro: Arch Linux
@@ -183,14 +179,14 @@ Drives:
 Info:
   Processes: 241 Uptime: 1h 14m Memory: 7.51 GiB used: 2.86 GiB (38.1%)
   Shell: Bash inxi: 3.3.23
-</code></pre><p>Come possiamo vedere, già con questo otteniamo un sacco di informazioni; tuttavia, se volessi controllare al volo soltanto un componente del mio sistema (per es. la batteria), allora tutto questo output potrebbe essere soltanto ridondante. Ovviamente c'è una soluzione, infatti con <strong>inxi</strong> possiamo andare a specificare ciò che vogliamo controllare: guardando l&rsquo;output del comando precdente infatti vediamo che viene restituito come una sorta di albero (simile a quello del comando <em>tree</em>), in cui ogni nodo possiamo dire che è un componente principale del nostro sistema. Bene, a questo punto basterà specifare a inxi (come opzione) l&rsquo;iniziale di ciò che vogliamo ispezionare: se per esempio voglio controllare soltanto la CPU digiterò:</p>
-<pre><code>$ inxi -C
+</code></pre><p>Come possiamo vedere, già con questo otteniamo un sacco di informazioni; tuttavia, se volessi controllare al volo soltanto un componente del mio sistema (per es. la batteria), allora tutto questo output potrebbe essere soltanto ridondante. Ovviamente c&rsquo;è una soluzione, infatti con <strong>inxi</strong> possiamo andare a specificare ciò che vogliamo controllare: guardando l&rsquo;output del comando precdente infatti vediamo che viene restituito come una sorta di albero (simile a quello del comando <em>tree</em>), in cui ogni nodo possiamo dire che è un componente principale del nostro sistema. Bene, a questo punto basterà specifare a inxi (come opzione) l&rsquo;iniziale di ciò che vogliamo ispezionare: se per esempio voglio controllare soltanto la CPU digiterò:</p>
+<pre tabindex="0"><code>$ inxi -C
 CPU:
   Info: dual core model: Intel Core i5-7200U bits: 64 type: MT MCP cache:
     L2: 512 KiB
   Speed (MHz): avg: 900 min/max: 400/3100 cores: 1: 900 2: 900 3: 900 4: 900
 </code></pre><p>per il comparto gragfico invece:</p>
-<pre><code>$ inxi -G
+<pre tabindex="0"><code>$ inxi -G
 Graphics:
   Device-1: Intel HD Graphics 620 driver: i915 v: kernel
   Device-2: Chicony HD WebCam type: USB driver: uvcvideo
@@ -282,7 +278,7 @@ Menzioniamo l&rsquo;ultimo (inaspettato) scenario in cui può essere utile quest
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

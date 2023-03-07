@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intrero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
+<meta name="description" content="Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
 Finestra - insieme dei pannelli che occupano lo schermo
 Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente
 Client - il processo in background che mostra la sessione" />
@@ -42,20 +42,16 @@ Client - il processo in background che mostra la sessione" />
 
 
 <meta itemprop="name" content="Tmux CheatSheet">
-<meta itemprop="description" content="Terminologia Pannello - un command prompt aperto (&ldquo;pseudo-terminale&rdquo;), che può occupare l&rsquo;intrero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
+<meta itemprop="description" content="Terminologia Pannello - un command prompt aperto (&ldquo;pseudo-terminale&rdquo;), che può occupare l&rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
 Finestra - insieme dei pannelli che occupano lo schermo
 Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&quot;detach&quot;) da parte dell&rsquo;utente
-Client - il processo in background che mostra la sessione">
-<meta itemprop="datePublished" content="2023-03-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2023-03-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="391">
-
-
-
+Client - il processo in background che mostra la sessione"><meta itemprop="datePublished" content="2023-03-01T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-03-01T12:00:00+00:00" />
+<meta itemprop="wordCount" content="710">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tmux CheatSheet"/>
-<meta name="twitter:description" content="Terminologia Pannello - un command prompt aperto (&ldquo;pseudo-terminale&rdquo;), che può occupare l&rsquo;intrero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
+<meta name="twitter:description" content="Terminologia Pannello - un command prompt aperto (&ldquo;pseudo-terminale&rdquo;), che può occupare l&rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
 Finestra - insieme dei pannelli che occupano lo schermo
 Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&quot;detach&quot;) da parte dell&rsquo;utente
 Client - il processo in background che mostra la sessione"/>
@@ -66,7 +62,7 @@ Client - il processo in background che mostra la sessione"/>
 
 
 
-    <meta property="article:published_time" content="2023-03-01 00:00:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2023-03-01 12:00:00 &#43;0000 UTC" />
 
 
 
@@ -143,20 +139,27 @@ Client - il processo in background che mostra la sessione"/>
 
             <div class="post-content">
                 <h3 id="terminologia">Terminologia</h3>
-<p><code>Pannello</code> - un command prompt aperto (&ldquo;pseudo-terminale&rdquo;), che può occupare l&rsquo;intrero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri<br>
+<p><code>Pannello</code> - un command prompt aperto (&ldquo;pseudo-terminale&rdquo;), che può occupare l&rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri<br>
 <code>Finestra</code> - insieme dei pannelli che occupano lo schermo<br>
 <code>Sessione</code> - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&quot;<em>detach</em>&quot;) da parte dell&rsquo;utente<br>
 <code>Client</code> - il processo in background che mostra la sessione<br>
 <code>Server</code> - tutte le sessioni sono gestite da un server singolo. Il server e il client comunicano tramite una socket in /tmp</p>
 <h3 id="comandi-generali">Comandi generali</h3>
 <blockquote>
-<p>In seguito verranno elencati diversi comandi: alcuni sono da eseguire dal nostro terminale di sistema (fuori da Tmux), mentre altri sono scorciatoie da eseguire dentro a Tmux (dopo aver digitato la combinazione di tasti adeguata). Per discriminare tra i due, userò il <em>$</em> per indicare quelli del primo tipo.</p>
+<p>In seguito verranno elencati diversi comandi: alcuni sono da eseguire dal nostro terminale di sistema (fuori da Tmux), mentre altri sono scorciatoie da eseguire dentro a Tmux (dopo aver digitato la combinazione di tasti adeguata, che di default è <em>Ctrl+b</em>). Per discriminare tra i due, userò il <em>$</em> all&rsquo;inizio del comando per indicare quelli del primo tipo.</p>
 </blockquote>
-<p><code>$ tmux</code> - avvia Tmux<br>
+<p><code>$ tmux</code> - avvia Tmux (creando nuova sessione)<br>
 <code>$ tmux list-keys</code> - mostra tutti i comandi<br>
 <code>$ tmux ls</code> - mostra tutte le sessioni<br>
-<code>$ tmux info</code> - mostra tutte le sessioni, pannelli e finestre<br>
-<code>$ tmux a</code> - (re)attach alla sessione creata più recentemente</p>
+<code>$ tmux info</code> - mostra tutte le sessioni, pannelli e finestre</p>
+<p><code>$ tmux a/at/attach/attach-session</code> - (re)attach alla sessione creata più recentemente<br>
+<code>$ tmux a -t *s0*</code> - attach alla sessione di nome <em>s0</em><br>
+<code>$ tmux new -s *s0*</code> - crea nuova sessione chiamata <em>s0</em><br>
+<code>$ tmux kill-ses/kill-session</code> - killa l&rsquo;ultima sessione attiva<br>
+<code>$ tmux kill-ses -t *s0*</code> - killa la sessione di nome <em>s0</em><br>
+<code>$ tmux kill-ses -a</code> - killa tutte le sessioni trannne quella corrente<br>
+<code>$ tmux kill-ses -a -a *s0*</code> - killa tutte le sessioni tranne quella di nome <em>s0</em></p>
+<p><code>$ tmux new -s *s0* -n *w0*</code> - crea nuova sessione chiamata <em>s0</em> con finestra chiamata <em>w0</em></p>
 <blockquote>
 <p>Prima di proseguire con i prossimi comandi, è bene menzionare che il comportamento di Tmux può essere modificato specificandolo nel file <em>~/.tmux.conf</em>. Di default questo file non è presente, quindi possiamo sia crearlo e configurarlo da zero, sia partire da quello di esempio fornito con l&rsquo;installazione di Tmux che si trova in <em>/usr/share/doc/tmux/example_tmux.conf</em> (andrà copiato nella nostra home e rinominato). Per quanto riguarda la combinazione di tasti da premere per mandare un comando a Tmux invece che alla shell, questa sarà sottinteso essere <em>Ctrl+b</em> (quella di default) anche quando non specificato. In caso di modifica nel file di configurazione (nel file di esempio viene impostata la <em>a</em> invece della <em>b</em>), basta sostituirla con quella scelta.</p>
 </blockquote>
@@ -166,15 +169,44 @@ Client - il processo in background che mostra la sessione"/>
 <h3 id="comandi-pannello">Comandi Pannello</h3>
 <p><code>%</code> - splitta verticalmente<br>
 <code>&quot;</code> - splitta orizzontalmente<br>
-<code>-&gt;</code> (freccia dx) - spostati sul pannello a destra (sinistra,sopra,sotto sono uguali ma con le rispettive frecce)</p>
+<code>-&gt;</code> (freccia dx) - spostati sul pannello a destra (sinistra,sopra,sotto sono uguali ma con le rispettive frecce)<br>
+<code>q</code> - mostra i numeri dei pannelli<br>
+<code>q 0..9</code> - cambia pannello in base al numero<br>
+<code>o</code> - vai al prossimo pannello<br>
+<code>z</code> - zoom in/out<br>
+<code>!</code> - converti pannello in una nuova finestra<br>
+<code>;</code> - vai a ultimo pannello attivo<br>
+<code>[spazio]</code> - cambia tra i layout dei pannelli<br>
+<code>{</code> - muovi il pannello a sinistra<br>
+<code>}</code> - muovi il pannello a destra<br>
+<code>x</code> - chiudi pannello corrente<br>
+<code>:setw synchronize-panes</code> - sincronizza input su tutti i pannelli (qualsiasi cosa digitata in un pannello verrà replicata in tutti gli altri che sono sincronizzati)<br>
+<code>:setw synchronize-panes off</code> - disattiva sincronizzazione pannelli</p>
+<blockquote>
+<p>il comando di sincronizzazione funziona solo all&rsquo;interno di una sessione Tmux, non ha effetto su finestre o pannelli di sessioni diverse</p>
+</blockquote>
+<p><code>:resize-pane -L 5</code> - sposta il bordo del pannello a sinistra di 5 righe</p>
+<blockquote>
+<p>le direzioni per questo comando sono: L sinistra, R destra, U sopra, D sotto</p>
+</blockquote>
 <h3 id="comandi-finestra">Comandi Finestra</h3>
 <p><code>c</code> - crea nuova finestra<br>
 <code>,</code> - rinomina finestra corrente<br>
 <code>p</code> - vai alla finestra precedente<br>
 <code>n</code> - vai alla finestra successiva<br>
-<code>w</code> - mostra finestre</p>
+<code>w</code> - mostra finestre<br>
+<code>&amp;</code> - chiudi la finestra attiva<br>
+<code>:swapw -s 0 -t 2</code> - swappa finestre 0 e 2<br>
+<code>:swapw -t -1</code> - muovi la finestra attiva a sinistra di una posizione</p>
 <h3 id="comandi-sessione">Comandi Sessione</h3>
-<p><code>d</code> - esci (detach) dalla sessione</p>
+<p><code>:new</code> - crea nuova sessione<br>
+<code>:new *s0*</code> - crea nuova sessionne chiamata <em>s0</em><br>
+<code>d</code> - esci (detach) dalla sessione<br>
+<code>s</code> - mostra tutte le sessioni<br>
+<code>$</code> - rinomina sessione<br>
+<code>w</code> - preview di sessione e finestre<br>
+<code>(</code> - vai alla sessione precedente<br>
+<code>)</code> - vai alla prossima sessione</p>
 
             </div>
         </article>
@@ -218,7 +250,7 @@ Client - il processo in background che mostra la sessione"/>
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 
