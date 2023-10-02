@@ -6,7 +6,16 @@
     <description>Recent content on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Wed, 01 Mar 2023 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2023 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gestione dei processi CheatSheet</title>
+      <link>https://example.com/cheatsheets/processi/</link>
+      <pubDate>Mon, 02 Oct 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cheatsheets/processi/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Tmux CheatSheet</title>
       <link>https://example.com/cheatsheets/tmux/</link>
@@ -17,15 +26,6 @@
 Finestra - insieme dei pannelli che occupano lo schermo
 Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente
 Client - il processo in background che mostra la sessione</description>
-    </item>
-    
-    <item>
-      <title>Il comando lsof</title>
-      <link>https://example.com/posts/8/</link>
-      <pubDate>Fri, 24 Feb 2023 12:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/posts/8/</guid>
-      <description></description>
     </item>
     
     <item>

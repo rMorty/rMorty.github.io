@@ -5,18 +5,8 @@
         <description>Recent content in Posts on QSL</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>it-IT</language>
-        <lastBuildDate>Fri, 24 Feb 2023 12:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 22 Nov 2022 12:00:00 +0000</lastBuildDate>
         <atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Il comando lsof</title>
-            <link>https://example.com/posts/8/</link>
-            <pubDate>Fri, 24 Feb 2023 12:00:00 +0000</pubDate>
-            
-            <guid>https://example.com/posts/8/</guid>
-            <description></description>
-            <content type="html"><![CDATA[]]></content>
-        </item>
         
         <item>
             <title>Il comando inxi</title>
