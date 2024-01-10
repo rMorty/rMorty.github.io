@@ -6,205 +6,140 @@
     <description>Recent content on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Mon, 02 Oct 2023 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2023 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gestione dei processi CheatSheet</title>
       <link>https://example.com/cheatsheets/processi/</link>
       <pubDate>Mon, 02 Oct 2023 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/processi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tmux CheatSheet</title>
       <link>https://example.com/cheatsheets/tmux/</link>
       <pubDate>Wed, 01 Mar 2023 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/tmux/</guid>
-      <description>Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
-Finestra - insieme dei pannelli che occupano lo schermo
-Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente
-Client - il processo in background che mostra la sessione</description>
+      <description>Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri&#xA;Finestra - insieme dei pannelli che occupano lo schermo&#xA;Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente&#xA;Client - il processo in background che mostra la sessione</description>
     </item>
-    
     <item>
       <title>Il comando inxi</title>
       <link>https://example.com/posts/7/</link>
       <pubDate>Tue, 22 Nov 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/7/</guid>
-      <description>Il comando inxi può tornarci utile ogni volta che vogliamo ottenere informazioni (soprattutto hardware, ma non solo) sul nostro sistema. Questo comando è compatibile con la maggior parte dei sistemi operativi e di hardware, e in diverse ditribuzioni lo troviamo installato di default; ma vediamo il funzionamento.
-N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man</description>
+      <description>Il comando inxi può tornarci utile ogni volta che vogliamo ottenere informazioni (soprattutto hardware, ma non solo) sul nostro sistema. Questo comando è compatibile con la maggior parte dei sistemi operativi e di hardware, e in diverse ditribuzioni lo troviamo installato di default; ma vediamo il funzionamento.&#xA;N.B. Questa sarà una guida veloce del comando per mettere a fuoco il funzionamento principale; per approfondire ovviamente fate riferimento alla pagina man</description>
     </item>
-    
     <item>
       <title>Git CheatSheet</title>
       <link>https://example.com/cheatsheets/git/</link>
       <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/git/</guid>
-      <description>Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit
-$ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit
-Creazione repository $ git init - inizializza la directory come un repository Git locale
-$ git clone [url] - scarica progetto esistente e suo storico cambiamenti
-Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system</description>
+      <description>Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit&#xA;$ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit&#xA;Creazione repository $ git init - inizializza la directory come un repository Git locale&#xA;$ git clone [url] - scarica progetto esistente e suo storico cambiamenti&#xA;Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system</description>
     </item>
-    
     <item>
       <title>[Guida] Come installare i plugin in Vim</title>
       <link>https://example.com/posts/6/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/6/</guid>
       <description>Vim è conosciuto (e utilizzato) per la sua incredibile capacità di aumentare la nostra efficienza nelllo scrivere ed editare programmi/script, ma è importante sapere che è possibile aumentare questa capacità personalizzando la nostra configurazione di Vim con dei plugin. Nonostante esistano due metodi per installare un plugin, ovvero quello manuale e non, in questa guida vediamo solo il primo in quanto è quello che io consiglio (questo metodo è disponibile a partire dalle versioni 8.</description>
     </item>
-    
     <item>
       <title>Shell CheatSheet</title>
       <link>https://example.com/cheatsheets/terminale/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/terminale/</guid>
-      <description>Processi Ctrl+c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)
-Ctrl+z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)
-Ctrl+D - chiude la shell (invia un EOF a bash)
-Schermo Ctrl+L - cancella lo schermo (simile al comando clear)
-Ctrl+S - interrompe l&amp;rsquo;output sullo schermo (ma non interrompe il processo)</description>
+      <description>Processi Ctrl+c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)&#xA;Ctrl+z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)&#xA;Ctrl+D - chiude la shell (invia un EOF a bash)&#xA;Schermo Ctrl+L - cancella lo schermo (simile al comando clear)&#xA;Ctrl+S - interrompe l&amp;rsquo;output sullo schermo (ma non interrompe il processo)</description>
     </item>
-    
     <item>
       <title>Vim CheatSheet</title>
       <link>https://example.com/cheatsheets/vim/</link>
       <pubDate>Thu, 06 Oct 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/vim/</guid>
-      <description>Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;
-:sav[eas] nomefile - salva file come
-clo[se] - chiudi finestra corrente
-ter[minal] - apri finestra terminale
-K - apri pagina man per la parola sotto il cursore
-Salvare e Uscire :w - salva, ma non uscire
-:w !sudo tee % - salva usando sudo
-:wq o :x o ZZ - salva ed esci
-:q - esci (fallisce se ci sono modifiche non salvate)</description>
+      <description>Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;&#xA;:sav[eas] nomefile - salva file come&#xA;clo[se] - chiudi finestra corrente&#xA;ter[minal] - apri finestra terminale&#xA;K - apri pagina man per la parola sotto il cursore&#xA;Salvare e Uscire :w - salva, ma non uscire&#xA;:w !sudo tee % - salva usando sudo&#xA;:wq o :x o ZZ - salva ed esci&#xA;:q - esci (fallisce se ci sono modifiche non salvate)</description>
     </item>
-    
     <item>
       <title>Cos&#39;è la Fork Bomb :(){ :|:&amp; };: in Bash</title>
       <link>https://example.com/posts/5/</link>
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/5/</guid>
       <description>Premessa - Cos&amp;rsquo;è una fork bomb Possiamo immaginarci una fork bomb come un attacco di tipo DoS (Denial of Service) contro un sistema che utilizza la funzione fork. Nel kernel Linux, la fork è una chiamata di sistema che permette a un processo (padre) di creare un altro processo (figlio) contenente inizialmente una copia di se stesso; una fork bomb sfrutta proprio questa syscall per eseguire fork all&amp;rsquo;infinito e quindi esaurire le risorse del sistema e renderlo inutilizzabile (sarà necessario un riavvio).</description>
     </item>
-    
     <item>
       <title>TTY Escape Cheatsheet</title>
       <link>https://example.com/cheatsheets/tty-escape/</link>
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/tty-escape/</guid>
-      <description>Spesso durante una CTF, dopo aver ottenuto l&amp;rsquo;accesso alla macchina per esempio attraverso una reverse/bind shell, ci ritroviamo di fronte ad una shell non interattiva che ci offre quindi un&amp;rsquo;esperienza limitata; è sempre bene perciò cercare di ottenerne una interattiva.
-Prima vediamo come ottenere una shell TTY:
-$ python -c &#39;import pty; pty.spawn(&amp;quot;/bin/sh&amp;quot;)&#39;
-$ echo os.system(&#39;/bin/bash&#39;)
-$ /bin/bash -i
-$ perl —e &#39;exec &amp;quot;/bin/sh&amp;quot;;&#39;
-$ perl: exec &amp;quot;/bin/sh&amp;quot;;
-$ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
+      <description>Spesso durante una CTF, dopo aver ottenuto l&amp;rsquo;accesso alla macchina per esempio attraverso una reverse/bind shell, ci ritroviamo di fronte ad una shell non interattiva che ci offre quindi un&amp;rsquo;esperienza limitata; è sempre bene perciò cercare di ottenerne una interattiva.&#xA;Prima vediamo come ottenere una shell TTY:&#xA;$ python -c &#39;import pty; pty.spawn(&amp;quot;/bin/sh&amp;quot;)&#39;&#xA;$ echo os.system(&#39;/bin/bash&#39;)&#xA;$ /bin/bash -i&#xA;$ perl —e &#39;exec &amp;quot;/bin/sh&amp;quot;;&#39;&#xA;$ perl: exec &amp;quot;/bin/sh&amp;quot;;&#xA;$ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
     </item>
-    
     <item>
       <title>Bash CheatSheet</title>
       <link>https://example.com/cheatsheets/bash/</link>
       <pubDate>Mon, 19 Sep 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/bash/</guid>
       <description>Intro Variabili NAME=&amp;#34;Qsl&amp;#34; echo $VAR echo &amp;#34;$VAR&amp;#34; echo &amp;#34;${VAR}&amp;#34; Apici stringhe NAME=&amp;#34;Qsl&amp;#34; echo &amp;#34;Hello $NAME&amp;#34; -&amp;gt; Hello Qsl echo &amp;#39;Hello $NAME&amp;#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;#34;Mi trovo in $(pwd)&amp;#34; echo &amp;#34;Mi trovo in `pwd`&amp;#34; Funzioni print_world() { echo &amp;#34;World!&amp;#34; } echo &amp;#34;Hello $(print_world)&amp;#34; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.</description>
     </item>
-    
     <item>
       <title>[Guida] Come abilitare i colori per la sintassi nell&#39;editor nano</title>
       <link>https://example.com/posts/3/</link>
       <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/3/</guid>
       <description>Chiunque abbia usato Linux, e nello specifico il terminale, avrà sicuramente avuto a che fare almeno una volta con l&amp;rsquo;editor di testo nano. Sicuramente la maggior parte delle persone non lo usa per progetti con codice di grande dimensione, ma per scrivere script direttamente da linea di comando può tornare molto utile. La cosa (brutta) che possiamo notare quando lo usiamo, è che di default la colorazione della sintassi è disattivata (al contrario, magari, di quanto avviene invece nel nostro IDE di fiducia), perciò vediamo come fare ad abilitarla.</description>
     </item>
-    
     <item>
       <title>[Guida] Come personalizzare il prompt della shell Bash</title>
       <link>https://example.com/posts/4/</link>
       <pubDate>Tue, 09 Aug 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/4/</guid>
       <description>Nonostante chiunque usi un sistema Linux abbia a che fare più o meno di frequente con il terminale, forse non tutti sanno che è possibile personalizzare il prompt della shell a livello di informazioni mostrate e colorazione. Questo può risultarci utile sia se vogliamo togliere/aggiungere le info mostrate, sia se vogliamo soltanto cambiare il colore (per esempio per adattarlo al tema che usiamo nel nostro sistema). Innanzitutto c&amp;rsquo;è da sapere che la configurazione viene salvata in una variabile di ambiente PS1: quindi, per controllare quella attuale, diamo da terminale</description>
     </item>
-    
     <item>
       <title>PicoCTF - Forensics</title>
       <link>https://example.com/ctfs/0/</link>
       <pubDate>Thu, 04 Aug 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/ctfs/0/</guid>
       <description>Wireshark doo dooo do doo&amp;hellip; Apriamo con Wireshark il file scaricato e vediamo che ci sono pacchetti TCP e HTTP. Clicchiamo per esempio sul primo pacchetto TCP, poi dal menu di Wireshark Analyze-&amp;gt;Follow-&amp;gt;TCP STream e analizziamo il traffico TCP. Nello stream 5 troviamo una stringa avente formato simile alle flags di picoCTF, ma sicuramente deve essere stata cifrata con qualche algoritmo. Possiamo usare un cipher identifier online: incolliamo la stringa e scopriamo che è stata cifrata con ROT13, decifriamola e otteniamo la bandiera della CTF.</description>
     </item>
-    
     <item>
       <title>[Guida] Come creare un&#39;immagine Docker personalizzata</title>
       <link>https://example.com/posts/2/</link>
       <pubDate>Tue, 02 Aug 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/2/</guid>
       <description>La Docker Hub è piena di immagini da cui partire per creare container da eseguire nel nostro sistema: questi container ovviamente possiamo personalizzarli a nostro piacimento, per esempio installando i tool che usiamo di solito. In alcuni casi, quindi, potrebbe tornarci utile poter creare un&amp;rsquo;immagine partendo da uno di questi container; in questo modo poi potremo usarla per eseguire container basati su essa anche su altri dispositivi, invece di dover ogni volta fare il pull dell&amp;rsquo;immagine generale e configurarla.</description>
     </item>
-    
     <item>
       <title>[Guida] Come installare Arch Linux</title>
       <link>https://example.com/posts/0/</link>
       <pubDate>Wed, 27 Jul 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/0/</guid>
-      <description>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa essere utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.
-Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&amp;rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</description>
+      <description>Per alcui utenti, soprattutto quelli alle prime armi, la documentazione ufficiale di Arch potrebbe risultare difficile da seguire: in questi casi penso che possa essere utile una guida che contenga niente più niente meno che i passaggi da seguire per una corretta installazione e configurazione.&#xA;Parte 1: Installazione Passo 1 - Avviare l&amp;rsquo;installer Per prima cosa occorre una chiavetta USB configurata per l&amp;rsquo;installazione di Arch (la preparazione di una USB avviabile con Linux è fuori dallo scopo di questo articolo, online ci sono svariati tuotorial) quindi inseriamola e avviamo il computer: scegliamo la prima opzione nel menu che ci compare, e ci troveremo di fronte ad un terminale come questo</description>
     </item>
-    
     <item>
       <title>Giocare con il terminale</title>
       <link>https://example.com/posts/1/</link>
       <pubDate>Mon, 25 Jul 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/posts/1/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>About</title>
       <link>https://example.com/page/about/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
-      
       <guid>https://example.com/page/about/</guid>
       <description>About Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas. Suspendisse eu erat tempor, tristique neque eu, convallis nulla. Curabitur vel bibendum lacus, at semper mauris. Suspendisse aliquet commodo ex, sed sagittis metus aliquam id. Maecenas feugiat rutrum lorem vel imperdiet. Nullam ornare lectus ut enim finibus, et porttitor mi tincidunt. Aenean lacinia, leo quis vehicula eleifend, quam libero sagittis erat, at euismod augue mauris et sapien.</description>
     </item>
-    
     <item>
       <title>Contact</title>
       <link>https://example.com/page/contact/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
-      
       <guid>https://example.com/page/contact/</guid>
       <description>Contact Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
     </item>
-    
     <item>
       <title>SSH CheatSheet</title>
       <link>https://example.com/cheatsheets/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/ssh/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

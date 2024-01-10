@@ -6,104 +6,63 @@
     <description>Recent content in Cheatsheets on QSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it-IT</language>
-    <lastBuildDate>Mon, 02 Oct 2023 12:00:00 +0000</lastBuildDate><atom:link href="https://example.com/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2023 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.com/cheatsheets/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gestione dei processi CheatSheet</title>
       <link>https://example.com/cheatsheets/processi/</link>
       <pubDate>Mon, 02 Oct 2023 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/processi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tmux CheatSheet</title>
       <link>https://example.com/cheatsheets/tmux/</link>
       <pubDate>Wed, 01 Mar 2023 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/tmux/</guid>
-      <description>Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri
-Finestra - insieme dei pannelli che occupano lo schermo
-Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente
-Client - il processo in background che mostra la sessione</description>
+      <description>Terminologia Pannello - un command prompt aperto (&amp;ldquo;pseudo-terminale&amp;rdquo;), che può occupare l&amp;rsquo;intero schermo o apparire splittato verticalmente/orizzontalmente se ce ne sono altri&#xA;Finestra - insieme dei pannelli che occupano lo schermo&#xA;Sessione - una singola collezione di pseudo-terminali gestiti da Tmux. Ogni sessione è persistente e sopravvive sia in caso di disconnessione accidentale (per esempio un timeout SSH) che in caso di disconnessione intenzionale (&amp;quot;detach&amp;quot;) da parte dell&amp;rsquo;utente&#xA;Client - il processo in background che mostra la sessione</description>
     </item>
-    
     <item>
       <title>Git CheatSheet</title>
       <link>https://example.com/cheatsheets/git/</link>
       <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/git/</guid>
-      <description>Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit
-$ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit
-Creazione repository $ git init - inizializza la directory come un repository Git locale
-$ git clone [url] - scarica progetto esistente e suo storico cambiamenti
-Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system</description>
+      <description>Configurazione globale $ git config --global user.name &amp;quot;[name]&amp;quot; - imposta nome da mostrare nei commit&#xA;$ git config --global user.email &amp;quot;[email]&amp;quot; - imposta email da mostrare nei commit&#xA;Creazione repository $ git init - inizializza la directory come un repository Git locale&#xA;$ git clone [url] - scarica progetto esistente e suo storico cambiamenti&#xA;Refactoring file $ git rm [file] - rimuovi file sia dal repository Git che dal file system</description>
     </item>
-    
     <item>
       <title>Shell CheatSheet</title>
       <link>https://example.com/cheatsheets/terminale/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/terminale/</guid>
-      <description>Processi Ctrl+c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)
-Ctrl+z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)
-Ctrl+D - chiude la shell (invia un EOF a bash)
-Schermo Ctrl+L - cancella lo schermo (simile al comando clear)
-Ctrl+S - interrompe l&amp;rsquo;output sullo schermo (ma non interrompe il processo)</description>
+      <description>Processi Ctrl+c - uccide il processo in primo piano in esecuzione nel terminale (invia il segnale SIGINT)&#xA;Ctrl+z - sospende il processo in esecuzione nel terminale (invia il segnale SIGTSTP). Per riportare il processo in primo piano diamo $ fg [numero_job] (per ottenere il numero $ jobs)&#xA;Ctrl+D - chiude la shell (invia un EOF a bash)&#xA;Schermo Ctrl+L - cancella lo schermo (simile al comando clear)&#xA;Ctrl+S - interrompe l&amp;rsquo;output sullo schermo (ma non interrompe il processo)</description>
     </item>
-    
     <item>
       <title>Vim CheatSheet</title>
       <link>https://example.com/cheatsheets/vim/</link>
       <pubDate>Thu, 06 Oct 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/vim/</guid>
-      <description>Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;
-:sav[eas] nomefile - salva file come
-clo[se] - chiudi finestra corrente
-ter[minal] - apri finestra terminale
-K - apri pagina man per la parola sotto il cursore
-Salvare e Uscire :w - salva, ma non uscire
-:w !sudo tee % - salva usando sudo
-:wq o :x o ZZ - salva ed esci
-:q - esci (fallisce se ci sono modifiche non salvate)</description>
+      <description>Global :h[elp] keyword - apri l&amp;rsquo;help di &amp;ldquo;keyword&amp;rdquo;&#xA;:sav[eas] nomefile - salva file come&#xA;clo[se] - chiudi finestra corrente&#xA;ter[minal] - apri finestra terminale&#xA;K - apri pagina man per la parola sotto il cursore&#xA;Salvare e Uscire :w - salva, ma non uscire&#xA;:w !sudo tee % - salva usando sudo&#xA;:wq o :x o ZZ - salva ed esci&#xA;:q - esci (fallisce se ci sono modifiche non salvate)</description>
     </item>
-    
     <item>
       <title>TTY Escape Cheatsheet</title>
       <link>https://example.com/cheatsheets/tty-escape/</link>
       <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/tty-escape/</guid>
-      <description>Spesso durante una CTF, dopo aver ottenuto l&amp;rsquo;accesso alla macchina per esempio attraverso una reverse/bind shell, ci ritroviamo di fronte ad una shell non interattiva che ci offre quindi un&amp;rsquo;esperienza limitata; è sempre bene perciò cercare di ottenerne una interattiva.
-Prima vediamo come ottenere una shell TTY:
-$ python -c &#39;import pty; pty.spawn(&amp;quot;/bin/sh&amp;quot;)&#39;
-$ echo os.system(&#39;/bin/bash&#39;)
-$ /bin/bash -i
-$ perl —e &#39;exec &amp;quot;/bin/sh&amp;quot;;&#39;
-$ perl: exec &amp;quot;/bin/sh&amp;quot;;
-$ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
+      <description>Spesso durante una CTF, dopo aver ottenuto l&amp;rsquo;accesso alla macchina per esempio attraverso una reverse/bind shell, ci ritroviamo di fronte ad una shell non interattiva che ci offre quindi un&amp;rsquo;esperienza limitata; è sempre bene perciò cercare di ottenerne una interattiva.&#xA;Prima vediamo come ottenere una shell TTY:&#xA;$ python -c &#39;import pty; pty.spawn(&amp;quot;/bin/sh&amp;quot;)&#39;&#xA;$ echo os.system(&#39;/bin/bash&#39;)&#xA;$ /bin/bash -i&#xA;$ perl —e &#39;exec &amp;quot;/bin/sh&amp;quot;;&#39;&#xA;$ perl: exec &amp;quot;/bin/sh&amp;quot;;&#xA;$ ruby: exec &amp;quot;/bin/sh&amp;quot;</description>
     </item>
-    
     <item>
       <title>Bash CheatSheet</title>
       <link>https://example.com/cheatsheets/bash/</link>
       <pubDate>Mon, 19 Sep 2022 12:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/bash/</guid>
       <description>Intro Variabili NAME=&amp;#34;Qsl&amp;#34; echo $VAR echo &amp;#34;$VAR&amp;#34; echo &amp;#34;${VAR}&amp;#34; Apici stringhe NAME=&amp;#34;Qsl&amp;#34; echo &amp;#34;Hello $NAME&amp;#34; -&amp;gt; Hello Qsl echo &amp;#39;Hello $NAME&amp;#39; -&amp;gt; Hello $NAME Inserire comandi echo &amp;#34;Mi trovo in $(pwd)&amp;#34; echo &amp;#34;Mi trovo in `pwd`&amp;#34; Funzioni print_world() { echo &amp;#34;World!&amp;#34; } echo &amp;#34;Hello $(print_world)&amp;#34; -&amp;gt; Hello World! Loops Base for i in /etc/rc.*; do echo $i done Range for i in {1..10}; do echo $i done # con incremento for i in {0.</description>
     </item>
-    
     <item>
       <title>SSH CheatSheet</title>
       <link>https://example.com/cheatsheets/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://example.com/cheatsheets/ssh/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
